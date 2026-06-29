@@ -1,0 +1,4 @@
+interface:
+  display_name: "Future Design Thinking Workshop"
+  short_description: "AI co-creation workflow for future design"
+  default_prompt: "Use $future-design-thinking-workshop to guide me through a future design workshop from signals to backcasting."
