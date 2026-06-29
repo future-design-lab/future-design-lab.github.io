@@ -47,15 +47,16 @@ Next decision needed:
 Run these stages in order unless the user explicitly supplies a complete artifact for a later stage:
 
 1. Frame the workshop brief.
-2. Collect and select Future Signals.
-3. Analyze signals with STEEP.
-4. Define the Local Challenge.
-5. Pair Signal + Challenge.
-6. Write the Interpretation.
-7. Create the Provotyping Card.
-8. Write the Tomorrow Headline.
-9. Build the Backcasting roadmap.
+2. Collect and select Future Signals. Use `future-signal-scout` when running this as an independent sub-skill.
+3. Analyze signals with STEEP. Use `steep-analysis`.
+4. Define the Local Challenge. Use `local-challenge-framing`.
+5. Pair Signal + Challenge. Use `signal-challenge-pairing`.
+6. Write the Interpretation. Use `future-interpretation-builder`.
+7. Create the Provotyping Card. Use `provotyping-card-builder`.
+8. Write the Tomorrow Headline. Use `tomorrow-headline-builder`.
+9. Build the Backcasting roadmap. Use `backcasting-roadmap-builder`.
 10. Assemble the final proposal.
+11. If course deliverables are needed, continue with `project-presentation-router`, `project-asset-archive`, production skills, and `project-delivery-checker`.
 
 ## Stage Instructions
 
