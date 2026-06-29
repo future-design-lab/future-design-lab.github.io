@@ -1,6 +1,6 @@
 # Future Design Lab Space Camp Docs
 
-This repository contains a documentation-style project homepage for the 2026 International Space Art & Design Collaborative Camp.
+This repository contains a documentation-style project homepage for the International Space Art & Design Collaborative Camp.
 
 ## Structure
 
