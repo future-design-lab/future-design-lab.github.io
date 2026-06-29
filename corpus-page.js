@@ -10,20 +10,38 @@ let currentLanguage = "zh";
 
 const ui = {
   zh: {
-    back: "返回首页",
-    sidebarTitle: "语料库",
+    "sidebar.title": "文档目录",
+    "sidebar.overview": "项目概览",
+    "sidebar.mission": "愿景与规模",
+    "sidebar.tracks": "六大赛道",
+    "sidebar.timeline": "项目节奏",
+    "sidebar.corpus": "语料库",
+    "sidebar.workshop": "AI 共创流程",
+    "sidebar.outputs": "产出要求",
+    "corpus1.short": "独立于地球",
+    "corpus2.short": "地外迷域",
+    "corpus3.short": "隐藏同款",
+    "corpus4.short": "新太空仪式感物件",
     loading: "正在读取语料素材...",
     entryCount: "条信号",
     detail: "资料详情",
-    source: "原始素材",
   },
   en: {
-    back: "Back Home",
-    sidebarTitle: "Corpus Library",
+    "sidebar.title": "Documentation",
+    "sidebar.overview": "Overview",
+    "sidebar.mission": "Mission & Scale",
+    "sidebar.tracks": "Six Tracks",
+    "sidebar.timeline": "Program Rhythm",
+    "sidebar.corpus": "Corpus Library",
+    "sidebar.workshop": "AI Workshop Flow",
+    "sidebar.outputs": "Outputs",
+    "corpus1.short": "Independent from Earth",
+    "corpus2.short": "Alien Mind",
+    "corpus3.short": "Hidden Twins",
+    "corpus4.short": "Space Ritual Objects",
     loading: "Loading corpus material...",
     entryCount: "signals",
     detail: "Corpus Detail",
-    source: "Source Material",
   },
 };
 
@@ -134,7 +152,6 @@ async function renderCorpus() {
   metaNode.innerHTML = `
     <span>${page.dataset.range}</span>
     <span>${page.dataset.use}</span>
-    <span>${ui[currentLanguage].source}: ${page.dataset.sourceName}</span>
   `;
   entriesNode.innerHTML = parsed.entries
     .map(
