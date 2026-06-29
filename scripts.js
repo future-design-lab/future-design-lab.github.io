@@ -1,6 +1,7 @@
 const sections = [...document.querySelectorAll(".section[id]")];
 const sidebarLinks = [...document.querySelectorAll(".sidebar a")];
 const languageButtons = [...document.querySelectorAll("[data-lang-switch]")];
+let currentLanguage = "zh";
 
 const translations = {
   zh: {
@@ -67,6 +68,7 @@ const translations = {
     "timeline.phase3Desc": "通过路演、评审、遴选与联合展览推进持续孵化。",
     "corpus.eyebrow": "语料库",
     "corpus.title": "四组语料为概念生成提供未来信号",
+    "corpus.viewDetails": "查看资料页",
     "corpus1.title": "语料包 1：独立于地球",
     "corpus1.desc": "火星长期定居所需的关键技术信号，从空气、水、电力到生态自治。",
     "corpus1.signals": "IE-01 到 IE-30",
@@ -161,6 +163,7 @@ const translations = {
     "timeline.phase3Desc": "Roadshows, review, selection, and the joint exhibition support continued incubation.",
     "corpus.eyebrow": "Corpus Library",
     "corpus.title": "Four corpus packs provide future signals for concept generation",
+    "corpus.viewDetails": "Open corpus page",
     "corpus1.title": "Corpus 1: Independent from Earth",
     "corpus1.desc": "Key technology signals for long-term Mars settlement, from air, water, and power to ecological autonomy.",
     "corpus1.signals": "IE-01 to IE-30",
@@ -195,6 +198,7 @@ const translations = {
 
 function applyLanguage(lang) {
   const current = translations[lang] ? lang : "zh";
+  currentLanguage = current;
 
   document.documentElement.lang = current === "zh" ? "zh-CN" : "en";
   document.title =
