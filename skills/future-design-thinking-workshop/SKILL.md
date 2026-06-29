@@ -67,6 +67,8 @@ For a more visual student-facing workflow, use `assets/future-design-canvas.html
 
 When the user wants students to use this skill interactively, run the live preview workflow in `references/html-canvas.md`: open the HTML canvas in the right-side browser preview, keep the conversation moving through the workshop stages, and update `future-design-canvas-state.json` after each meaningful user answer so the preview reflects the dialogue.
 
+When the user has completed the workshop and wants to make final deliverables such as slides, reports, images, prototypes, drawings, storyboards, or videos, read `references/post-workshop-production-router.zh-CN.md` to choose the next skill route and required inputs.
+
 Chinese mirrors are maintained in `SKILL.zh-CN.md`, `references/stage-guides.zh-CN.md`, `references/output-templates.zh-CN.md`, and `references/html-canvas.zh-CN.md`. When updating this skill, keep the English and Chinese versions semantically synchronized.
 
 ## Conversation Pattern
