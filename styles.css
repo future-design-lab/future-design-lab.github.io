@@ -152,6 +152,22 @@ a {
   margin-bottom: 4px;
 }
 
+.sidebar-group {
+  margin-bottom: 4px;
+}
+
+.sidebar-children {
+  border-left: 1px solid var(--line);
+  margin: 2px 0 8px 18px;
+  padding-left: 8px;
+}
+
+.sidebar-children a {
+  font-size: 13px;
+  margin-bottom: 2px;
+  padding: 7px 9px;
+}
+
 .docs {
   margin-left: 250px;
   padding: 0 36px 72px;
