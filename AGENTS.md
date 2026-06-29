@@ -47,9 +47,10 @@ Primary files:
 - `index.html`: main documentation landing page
 - `styles.css`: shared styling for home and corpus pages
 - `scripts.js`: home page interactions and bilingual text switching
-- `corpus-page.js`: shared logic for corpus detail pages
+- `corpus-page.js`: shared logic for corpus and case detail pages
 - `corpus/*.html`: standard doc subpages for each corpus pack
-- `materials/extracted/*.md`: parsed text sources used by the site
+- `cases/*.html`: standard doc subpages for each workshop case-library theme (reuse `corpus-page.js`)
+- `materials/extracted/*.md`: parsed text sources used by the site (`corpus-*.md` for corpus packs, `case-*.md` for case libraries)
 - `assets/hero/*`: images extracted from the deck
 - `assets/workshop/*`: rendered pages from the workshop PDF
 
@@ -73,6 +74,11 @@ Home page sidebar sections:
   - Alien Mind
   - Hidden Twins
   - Space Ritual Objects
+- Case Library
+  - Embodied Experience & Interaction Design
+  - Cultural Structure & Ritual Evolution
+  - Time Reconstruction & Emotional Connection
+  - Non-geographic Shared Space
 - AI Workshop Flow
 - Outputs
 
@@ -141,6 +147,10 @@ http://127.0.0.1:4173/corpus/independent-from-earth.html
 http://127.0.0.1:4173/corpus/alien-mind.html
 http://127.0.0.1:4173/corpus/hidden-twins.html
 http://127.0.0.1:4173/corpus/space-ritual-objects.html
+http://127.0.0.1:4173/cases/embodied-interaction.html
+http://127.0.0.1:4173/cases/cultural-ritual.html
+http://127.0.0.1:4173/cases/time-emotion.html
+http://127.0.0.1:4173/cases/shared-space.html
 ```
 
 ## Verification Checklist
@@ -156,6 +166,10 @@ Before committing:
    - `corpus-2`: 30 entries
    - `corpus-3`: 30 entries
    - `corpus-4`: 33 entries
+   - `case-1`: 20 entries
+   - `case-2`: 20 entries
+   - `case-3`: 17 entries
+   - `case-4`: 20 entries
 6. Confirm public-facing pages do not show implementation/source labels such as `原始素材: corpus-1.md`.
 7. Confirm there are no visible cohort-specific dates on the public home page.
 

@@ -16,12 +16,17 @@ const ui = {
     "sidebar.tracks": "六大赛道",
     "sidebar.timeline": "项目节奏",
     "sidebar.corpus": "语料库",
+    "sidebar.cases": "案例库",
     "sidebar.workshop": "AI 共创流程",
     "sidebar.outputs": "产出要求",
     "corpus1.short": "独立于地球",
     "corpus2.short": "地外迷域",
     "corpus3.short": "隐藏同款",
     "corpus4.short": "新太空仪式感物件",
+    "case1.short": "具身体验与交互设计",
+    "case2.short": "文化结构与仪式演化",
+    "case3.short": "时间重构与情感连接",
+    "case4.short": "非地理性共享空间",
     loading: "正在读取语料素材...",
     entryCount: "条信号",
     detail: "资料详情",
@@ -33,12 +38,17 @@ const ui = {
     "sidebar.tracks": "Six Tracks",
     "sidebar.timeline": "Program Rhythm",
     "sidebar.corpus": "Corpus Library",
+    "sidebar.cases": "Case Library",
     "sidebar.workshop": "AI Workshop Flow",
     "sidebar.outputs": "Outputs",
     "corpus1.short": "Independent from Earth",
     "corpus2.short": "Alien Mind",
     "corpus3.short": "Hidden Twins",
     "corpus4.short": "Space Ritual Objects",
+    "case1.short": "Embodied Experience & Interaction",
+    "case2.short": "Cultural Structure & Ritual",
+    "case3.short": "Time Reconstruction & Emotion",
+    "case4.short": "Non-geographic Shared Space",
     loading: "Loading corpus material...",
     entryCount: "signals",
     detail: "Corpus Detail",
@@ -136,7 +146,7 @@ function renderEntryBody(lines) {
     .map((line) => {
       const colon = currentLanguage === "zh" ? "：" : ":";
       const highlighted = line.replace(
-        /^(说明|出处|信号标签|感知类别|关键词|产品类别|引用|Description|Source|Signal Tags|Perception|Keywords|Category|Citation)\s*[:：]?\s*/,
+        /^(说明|出处|信号标签|感知类别|关键词|产品类别|引用|启发|技术载体|未来影响|相关原理|设计对象|设计手法|标签|Description|Source|Signal Tags|Perception|Keywords|Category|Citation|Insight|Technology|Future Impact|Principle|Design Object|Design Method|Tags)\s*[:：]?\s*/,
         `<strong>$1${colon}</strong> `,
       );
       return `<p>${highlighted}</p>`;
@@ -163,7 +173,8 @@ async function renderCorpus() {
   const parsed = parseCorpusMarkdown(markdown);
 
   overviewNode.textContent = parsed.overview || page.dataset[`subtitle${currentLanguage}`];
-  countNode.textContent = `${parsed.entries.length} ${ui[currentLanguage].entryCount}`;
+  const unitLabel = page.dataset[`unit${currentLanguage}`] || ui[currentLanguage].entryCount;
+  countNode.textContent = `${parsed.entries.length} ${unitLabel}`;
   metaNode.innerHTML = `
     <span>${page.dataset[`range${currentLanguage}`]}</span>
     <span>${page.dataset[`use${currentLanguage}`]}</span>
