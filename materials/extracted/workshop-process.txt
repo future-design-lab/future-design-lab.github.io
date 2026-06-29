@@ -1,0 +1,526 @@
+Future Design Thinking Workshop
+AI共创工作坊流程及产出介绍
+AI共创工作坊流程-设计未来框架
+Work flow
+
+
+
+
+                    1
+
+
+
+
+                    2
+
+
+
+
+                3
+
+
+
+
+            4
+
+
+
+                5
+用于AI共创工作坊的设计未来方法
+Future Signals
+Analysis Model
+Drawing from future signals and current issues to inspire
+future trends
+
+
+
+
+  Frontier inquiry                       信号 Signals                                  理解/趋势 Interpretation
+                                                                                                                 future trends
+  Knowledge map                          The signals come from                      Interpretation is the
+                                         some information in                        understanding of future
+                                         newspapers or news,                        signs by those who receive
+                                         and these signals have     Future          signals and questions,
+                                         a certain quantity and     Signs           tending towards subjective
+                                         visibility                                 inference
+
+
+
+  Literature review                                                问题 Issues
+    Product cases
+                                          The issues is that what we see and feel is truly happening around
+                                          us and is an objective fact
+STEEP
+Analysis Model
+The STEEP model is an extension of the STEP analysis, serving
+as a method to help businesses review their external macro
+environment. .
+Tomorrow’s Headline
+Analysis Model
+The tomorrow’s headlines are
+fictional news articles created by
+imagining a desirable (or
+undesirable) future from the
+perspective of users within the
+service context.
+Tomorrow’s Headline
+Use case
+
+News title
+Tomorrow Dog Company has
+announced the latest implanted chip
+                                         News title
+The function of absolutely controlling
+                                         Human-pet co-evolution
+the behavior of pets has sparked
+                                         Social morality
+controversy
+                                         construction
+News content
+                                         News content
+Product release time
+                                         Conduct ethical
+Product functions
+                                         discussions from the
+Product usage technology
+                                         perspectives of tech
+Future upgrade outlook
+                                         giants, governments, pet
+                                         NGOs, and dog owners
+Back-casting
+Analysis Model
+What should we do step by step from the preferable future
+to the present
+用于AI共创工作坊的AI代理
+Future Design Thinking Forum
+Implementation of Generative AI in Regional Society
+
+
+
+
+AI AGENT FOR
+ENVISIONING THE FUTURES
+
+                    Idea generating tool
+
+                    https://project-aizu-agent-git-main-
+                    hazel-songs-projects.vercel.app/workshop
+Homepage | The process navigation interface 首页导航界面
+
+
+                                                     Divided into four card-style
+                                                     modules:
+
+                                                     - Signal: Select future signals
+
+                                                     - Issue: Input or choose local
+                                                     challenges
+
+                                                     - Interpretation: Generate future
+                                                     interpretations and evolutionary logic
+
+                                                     - Tomorrow Headline: Create future
+                                                     news headlines based on the
+                                                     interpretation
+
+                                                     Each module includes bilingual
+                                                     descriptions and a navigation button
+                                                     for access.
+Page-1｜ 1- Future Signals 浏览并选择未来信号
+
+
+                                      1. At the top of the page is a step-by-
+                                      step navigation bar (Steps 1–4),
+                                      allowing users to freely switch
+                                      between stages.
+
+                                      2. On the left is the future signals
+                                      library, where users can toggle
+                                      between different views and click to
+                                      view details.
+
+                                      3. The right panel displays the details
+                                      of the selected signal, including
+                                      illustrations, quotes, and English
+                                      descriptions.
+
+                                      Clicking the “Next Step” button in
+                                      the bottom right confirms the
+                                      selection and proceeds to the next
+                                      stage.
+Page-2｜ 2- Local Challenges 选择或输入感兴趣的地方挑战 [AI可提供辅助]
+
+
+
+
+                                                      1. On the left is the local challenge
+                                                      library, where users can browse and
+                                                      select regional issues.
+
+                                                      2. On the right is the AI assistant
+                                                      panel, which supports user input,
+                                                      tag-based guidance, and interactive
+                                                      content generation through dialogue.
+Page-2｜ 2- Local Challenges 选择或输入感兴趣的地方挑战 [AI可提供辅助]
+
+
+
+
+                                                      By clicking the “+” button at
+                                                      the top right of the local
+                                                      challenge library, users can
+                                                      enter their own topics of
+                                                      interest. After clicking Confirm,
+                                                      the custom issue will be saved
+                                                      and made available for use in
+                                                      subsequent steps.
+Page-3｜ 3- Interpretation 生成Provotyping Card和Interpretation句式以启发思考 [AI可提供辅助]
+
+
+
+
+                                                          The Signal and Challenge selected
+                                                          in the first two steps will be
+                                                          automatically loaded on this page.
+
+                                                          The first task for the user is to
+                                                          generate a Prototyping Card—they
+                                                          can regenerate it as many times as
+                                                          needed until satisfied.
+
+                                                          [Agent support in this step]
+Page-3｜ 3- Interpretation 生成Provotyping Card和Interpretation句式以启发思考 [AI可提供辅助]
+
+
+
+                                                         Then, by clicking the Generate
+                                                         button in the Interpretation section,
+                                                         the Agent will automatically compose
+                                                         a sentence based on the contents of
+                                                         A, B+, and C.
+
+                                                         Users can chat with the AI assistant
+                                                         based on this sentence structure. A
+                                                         variety of “magic if” prompt
+                                                         templates are provided to inspire
+                                                         exploration.
+
+                                                         Users may also modify the contents
+                                                         of the Interpretation sentence with
+                                                         the assistance of the large language
+                                                         model.
+
+                                                         [Agent support in this step]
+Page-4｜ 4- Tomorrow Headline 生成明日头条[接入生图模型]
+
+
+
+                                              Based on the user’s final confirmed
+                                              Interpretation, the large language
+                                              model will automatically generate a
+                                              Tomorrow Headline.
+
+                                              [Agent support in this step]
+AI共创工作坊的产出要求
+Design Foresight
+
+
+
+Workshop Output
+
+
+ 1. Prototyping Card（Can be described manually）
+ 2. Interpretation（Can be described manually）
+ 3. Tomorrow Headline
+ 4. How can different roles achieve the future
+
+     Backcasting        I'm the mayor of Aizu     I'm the business     I Am I
+                                                    leader of Aizu
+  3 Measures to be            Proposal           Products & Services   Action
+  taken in 2030
+  2 Measures to be            Proposal           Products & Services   Action
+  taken in 2040
+
+  1 The goal for 2050         Proposal           Products & Services   Action
+AI共创工作坊的产出（共1 1 组）
+组1 ：N EET to go
+• Future Creativity, how can
+     AI solve real-world
+          problems
+Prototype card
+• Aizu faces the challenge of promoting cultural innovation
+  and modernization while preserving its rich traditions.
+• The region must find ways to integrate modern technology
+  and ideas with traditional practices without losing its
+  cultural identity.
+• This requires fostering a creative environment where new
+  ideas complement rather than replace traditional crafts
+  and customs.
+• Encouraging collaboration between local artisans and
+  modern innovators can help strike this balance, ensuring that
+  Aizu's heritage remains vibrant and relevant in a rapidly
+  changing world.
+Interpretation
+Prototype Concept: AI-Driven NEET Empowerment Platform called "NEET Empower".
+
+Purpose:
+• Transition NEETs (Not in Education, Employment, or Training) into creative and productive roles.
+• Address real-world challenges using AI.
+
+Key Features:
+• AI assessment of individual skills, interests, and local job market demands.
+• Personalized learning paths tailored to each user’s needs.
+• AI mentors guide users through creative problem-solving modules.
+• Encourages application of creativity across various fields.
+
+Collaboration:
+• Partnering with local businesses and educational institutions.
+• Offers virtual internships and project-based learning opportunities.
+
+Outcomes:
+• NEETs gain hands-on experience and build a professional portfolio.
+• Fosters a culture of innovation.
+• Tackles local challenges through creative AI solutions.
+Tomorrow Headline - 2030
+                Connection to “NEET to Go – Future Creativity 2030
+                This image envisions a mature phase of the NEET
+                Empowerment Platform:
+
+                •NEETs Become Change Agents: Individuals once left
+                behind are now leaders in design, tech, science, and
+                entrepreneurship.
+
+                •Community Innovation Culture: AI supports a maker-
+                driven culture where learning is hands-on and outcome-
+                oriented.
+
+                •Creative Economy Entry: Participants don’t just consume
+                knowledge they co-create with AI to develop tools,
+                products, and public solutions.
+Tomorrow Headline - 2040
+                This image can be interpreted as a vision of the NEET
+                Empowerment Platform evolving into a creative AI-driven
+                transformation hub in 2040, where:
+
+                •AI mentors guide NEETs through personalized learning
+                journeys based on their interests and abilities.
+
+                •Participants are empowered to solve real-life challenges,
+                not just consume knowledge passively.
+
+                •The interactive environment stimulates curiosity and
+                engagement, helping NEETs find a sense of purpose.
+
+                •AI helps unlock latent talent, promoting creative
+                problem-solving, entrepreneurship, and social
+                contribution.
+Tomorrow Headline - 2050
+                Relation to “NEET to Go” and Future Creativity 2050
+                This scene illustrates a realized vision of the NEET
+                Empowerment Platform:
+
+                •Creative Ecosystem: NEETs are no longer isolated,
+                they’re engaged in project-based learning,
+                collaborating in open environments, ideating, and
+                building solutions.
+
+                •Access to AI Tools & Mentorship: AI assists in
+                identifying talents, building skills, and matching
+                individuals with relevant challenges turning passive
+                individuals into active innovators.
+
+                •Community-Driven Impact: The setting fosters peer
+                collaboration, group challenges, and knowledge-
+                sharing, all powered by AI recommendations and global
+                data.
+How to Achieve the goal
+组2：Right to M obility in the Age of Population Decline
+Right to Mobility in the Age
+of Population Decline
+Equitable, sustainable access through smart community mobility hubs
+Prototype: Community
+Mobility Hubs
+  Centrally Located Nodes
+  Strategically positioned for maximum community access
+
+
+
+  Multi-Modal Services
+  EVs, bike-sharing, on-demand shuttles in one location
+
+
+
+  AI-Powered System
+  Smart booking and route optimization for efficiency
+
+
+
+  Design Principles
+  Accessibility, affordability, and sustainability
+The Future Signal & Local Challenge
+                Right to Mobility
+                Essential access for all citizens
+
+
+                           Population Decline
+                           Aging communities with decreasing density
+
+
+                                      Innovation Need
+                                      New solutions for changing demographics
+Why Community Mobility Hubs?
+
+                Essential Access         Social Connection
+Healthcare, education, shopping within   Reduce isolation for vulnerable
+                                reach    populations
+
+
+
+
+                     Sustainability
+                                         Economic Vitality
+         Support green transportation
+                                         Attract new residents and visitors
+                        infrastructure
+Interpreting the Future
+     Right to Mobility
+     Movement as a fundamental right
+
+
+     Community Hubs
+     Physical infrastructure to enable access
+
+
+     Address Decline
+     Counter population decrease trends
+
+
+     Quality of Life
+     Better living through improved connectivity
+Tomorrow's Headline
+Smart Mobility Hubs Reverse Decline
+Rural renaissance through connected transportation
+
+
+
+
+Aging Towns Thrive Again
+New vitality in previously declining areas
+
+
+
+AI-Powered Transport Network
+Technology enables efficient access for all
+Who Makes It Real?
+                          Policymakers        Urban Planners
+Fund infrastructure and set legal framework   Design inclusive, central community hubs
+
+
+
+
+                              Citizens          Tech Developers
+  Advocate, adopt, and provide feedback         Build AI tools and booking systems
+
+
+                 Transport Providers          Community Leaders
+         Operate and maintain the services    Ensure solutions reflect local needs
+Backcasting: From Vision to Action
+Turning our mobility vision into reality requires coordinated action across multiple stakeholders. Each plays a vital role in our journey to 2050.
+
+
+  Timeframe & Stakeholders                 I'm the Mayor of Aizu                   I'm the business leader of Aizu          I am I
+
+
+
+  2030 Measures                            Improve rural transport funding.        Pilot smart transport systems.           Participate in community surveys.
+                                           Pass mobility rights ordinance.         Invest in AI mobility startups.          Join pilot programs. Advocate for
+                                           Allocate hub development land.          Partner with tech firms.                 local transport needs.
+
+
+  2040 Measures                            Scale hub network across districts.     Launch integrated transport              Adopt shared mobility options.
+                                           Introduce low-emission transport        platforms. Expand services for           Promote hubs to newcomers.
+                                           policies.                               elderly and logistics.                   Provide service improvement
+                                                                                                                            feedback.
+
+  2050 Goal                                Guarantee Right to Mobility for all.    Operate full Smart Mobility Hub          Experience seamless, affordable
+                                           Ensure inclusive regional               Network. Position Aizu as                transport. Contribute to vibrant,
+                                           connectivity.                           innovation leader.                       connected community.
+Shaping the Future Together
+ Mobility as Necessity
+ Not a luxury but a fundamental right
+
+    Scalable Solution
+    Adaptable to communities of various sizes
+
+       Design for Inclusion
+       Prioritize access over mere efficiency
+
+          Collective Action
+          Are we ready to guarantee mobility for all?
+组3：M odern Fam ily Structures: Com m unity and Change
+Modern Family Structures:
+Community and Change
+
+Exploring evolving family concepts beyond traditional definitions.
+Prototyping Card - "Model of Family:
+Female Exodus Challenge"
+
+•   Concept: Evolving family structures in response to women
+    choosing alternative paths
+•   Key Elements:
+    •   Traditional family models becoming optional rather than expected
+    •   Women creating community-based support networks
+        outside marriage
+    •   Economic independence enabling new lifestyle choices
+    •   Family units adapting to include chosen connections beyond
+        traditional roles
+•   Core Challenge: How can family models evolve to address the
+    needs that are causing women to seek fulfillment outside
+    traditional structures?
+Interpretation - The Changing Family Model
+
+
+
+
+Economic Security &      Community-Based              Changing Values           Female Exodus
+Fulfillment              Families                     Focus moves from          Women seeking new
+Women prioritize both    Alternative family units     possessions to            family models beyond
+financial independence   forming around mutual        meaningful experiences    traditional marriage.
+and personal growth.     support and shared values.   and self-actualization.
+Tomorrow Headline
+"New Family Models Reverse Female Exodus Trend by
+Embracing Equality and Purpose"
+After decades of declining traditional family formation, innovative family
+structures embracing equality and purpose have begun attracting women
+back to family life. These models feature shared responsibilities,
+economic independence for all members, flexible living arrangements,
+and strong community support systems. Both civic policies and
+workplace adaptations have made these new family structures viable,
+proving that meaningful bonds remain essential when reimagined for
+contemporary needs and values.
+Addressing Female Exodus in Family Models
+Backcasting                    I am the mayor of Aizu         I am the business leader of     I am I
+                                                              Aizu
+
+Measures to be taken in 2030   • Improve budget in the city   • Create equal/more job         • Community/support
+                               & universities                 opportunities for females       groups
+                               • Money for female             • Flexible work hours/work-     • Increase personal
+                               employment & startups          life balance                    capabilities
+                               • Women owned committee
+Measures to be taken in 2040   • Move initiatives from city   • Allow working with children   • Start personal work
+                               to nation                      at workplaces                   projects
+                               • Make business more           • Trainings & mentorship
+                               family-inclusive (flexible
+The goal for 2050              policies)
+                               • Let robots do dangerous      • Work with AI                  • Create more entrepreneurship
+                               jobs like firefighting/late    • AI do the physical work       targeted to women.
+                               night work
+组4：Reversing the Trend
+组5：Intergeneration Fusion
+组6：Sustainable Design Industry
+组7：Planetary Regeneration
+组8：Digital Grow thHub
+组9：Sm art HDB W aste M anagem ent
+组1 0：M issing Reality
+组1 1 ：Com m unication Enigm a
+
