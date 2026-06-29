@@ -65,6 +65,10 @@ function applyLanguage(lang) {
   });
 
   localStorage.setItem("space-camp-language", currentLanguage);
+
+  renderCorpus().catch((error) => {
+    overviewNode.textContent = error.message;
+  });
 }
 
 function normalizeEntryTitle(line) {
@@ -130,28 +134,39 @@ function renderEntryBody(lines) {
     .map(cleanMarkdownLine)
     .filter(Boolean)
     .map((line) => {
+      const colon = currentLanguage === "zh" ? "：" : ":";
       const highlighted = line.replace(
-        /^(说明|出处|信号标签|感知类别|关键词|产品类别|引用)：?/,
-        "<strong>$1：</strong>",
+        /^(说明|出处|信号标签|感知类别|关键词|产品类别|引用|Description|Source|Signal Tags|Perception|Keywords|Category|Citation)\s*[:：]?\s*/,
+        `<strong>$1${colon}</strong> `,
       );
       return `<p>${highlighted}</p>`;
     })
     .join("");
 }
 
-async function renderCorpus() {
-  overviewNode.textContent = ui[currentLanguage].loading;
-  const response = await fetch(page.dataset.source);
-  if (!response.ok) throw new Error(`Failed to load ${page.dataset.source}`);
+const markdownCache = new Map();
 
-  const markdown = await response.text();
+async function fetchMarkdown(url) {
+  if (markdownCache.has(url)) return markdownCache.get(url);
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Failed to load ${url}`);
+  const text = await response.text();
+  markdownCache.set(url, text);
+  return text;
+}
+
+async function renderCorpus() {
+  const source = page.dataset[`source${currentLanguage}`];
+  overviewNode.textContent = ui[currentLanguage].loading;
+
+  const markdown = await fetchMarkdown(source);
   const parsed = parseCorpusMarkdown(markdown);
 
   overviewNode.textContent = parsed.overview || page.dataset[`subtitle${currentLanguage}`];
   countNode.textContent = `${parsed.entries.length} ${ui[currentLanguage].entryCount}`;
   metaNode.innerHTML = `
-    <span>${page.dataset.range}</span>
-    <span>${page.dataset.use}</span>
+    <span>${page.dataset[`range${currentLanguage}`]}</span>
+    <span>${page.dataset[`use${currentLanguage}`]}</span>
   `;
   entriesNode.innerHTML = parsed.entries
     .map(
@@ -173,6 +188,3 @@ languageButtons.forEach((button) => {
 });
 
 applyLanguage(localStorage.getItem("space-camp-language") || "zh");
-renderCorpus().catch((error) => {
-  overviewNode.textContent = error.message;
-});
