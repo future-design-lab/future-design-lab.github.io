@@ -73,7 +73,9 @@ The state file uses this shape (start blank, fill as you go):
 }
 ```
 
-The `headline` object may include an `image` field pointing to a relative path or URL for the Tomorrow Headline visual. When Stage 8 is complete, generate a newspaper front page, web headline, or launch-poster style image and reference it from `headline.image`.
+The `headline` object may include an `image` field pointing to a relative path (or URL) for the Tomorrow Headline visual. When Stage 8 is complete, generate the fully laid-out headline artifact (see `references/stage-guides.md` Stage 8), **save the image file into the same working folder as `future-design-canvas.html`**, and set `headline.image` to its filename (e.g. `"headline-2040.png"`) so the canvas can render it. Because the canvas loads the image by relative path, it must sit next to the HTML — a bare URL works too, but a local file next to the canvas is the reliable default.
+
+> **Full access / file-write permission required for the headline image.** Generating the artifact AND saving it next to the canvas writes a new file to the student's disk. If the agent is running in a restricted / read-only / ask-every-time mode, this write (and the `future-design-canvas-state.json` update that points to it) will be blocked, the image won't appear on the page, and the live sync will silently miss it. **Before generating the Tomorrow Headline image, tell the student to grant the agent full access / file-write permission** (Codex: run with full-access / approve file writes; Claude Code: allow write to the working folder; other agents: enable file write / "full access" mode). Then save the image, update `headline.image`, and confirm the canvas shows it.
 
 Use zero-based `current`: Stage 1 is `0`, Stage 2 is `1`, and so on. Advance `current` as the discussion moves forward so the live canvas highlights the active stage. Keep `lang` as `zh` or `en`.
 
