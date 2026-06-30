@@ -289,11 +289,16 @@
             <h3 data-i18n="tools.step2Title">配置 LLM API</h3>
             <p data-i18n="tools.step2Desc">在终端中运行以下命令，自动配置 mantai LLM 服务（已有配置不会被覆盖）：</p>
 
-            <div class="code-block">mkdir -p ~/.codex
+            <div class="platform-tabs" data-tab-group="config-cmd">
+              <button type="button" class="platform-tab active" data-tab="mac">macOS / Linux</button>
+              <button type="button" class="platform-tab" data-tab="win">Windows (PowerShell)</button>
+            </div>
+            <div class="platform-content active" data-tab-content="config-cmd" data-tab="mac">
+              <div class="code-block">mkdir -p ~/.codex
 if grep -q '^model_provider' ~/.codex/config.toml 2>/dev/null; then
   sed -i.bak 's/^model_provider.*/model_provider = "mantai"/' ~/.codex/config.toml
 else
-  echo 'model_provider = "mantai"' >> ~/.codex/config.toml
+  sed -i.bak 's/^model /model_provider = "mantai"\nmodel /' ~/.codex/config.toml
 fi
 if ! grep -q '\[model_providers.mantai\]' ~/.codex/config.toml 2>/dev/null; then
   cat >> ~/.codex/config.toml &lt;&lt; 'EOF'
@@ -305,6 +310,33 @@ wire_api = "responses"
 requires_openai_auth = true
 EOF
 fi</div>
+            </div>
+            <div class="platform-content" data-tab-content="config-cmd" data-tab="win">
+              <div class="code-block">$dir = "$env:USERPROFILE\.codex"
+$file = "$dir\config.toml"
+if (!(Test-Path $dir)) { New-Item -ItemType Directory -Path $dir | Out-Null }
+if (!(Test-Path $file)) { New-Item -ItemType File -Path $file | Out-Null }
+$c = Get-Content $file -Raw -ErrorAction SilentlyContinue
+if ($c -match '(?m)^model_provider') {
+  $c = $c -replace '(?m)^model_provider.*', 'model_provider = "mantai"'
+  Set-Content $file $c -NoNewline
+} else {
+  $lines = Get-Content $file
+  $idx = ($lines | Select-String -Pattern '^model ').LineNumber - 1
+  $lines = $lines[0..($idx-1)] + 'model_provider = "mantai"' + $lines[$idx..($lines.Length-1)]
+  $lines | Set-Content $file
+}
+if ($c -notmatch '\[model_providers\.mantai\]') {
+  Add-Content $file @"
+
+[model_providers.mantai]
+name = "mantai"
+base_url = "https://llm.mantai.me/v1"
+wire_api = "responses"
+requires_openai_auth = true
+"@
+}</div>
+            </div>
 
             <h4 data-i18n="tools.step2FileB">登录并输入 API Key</h4>
             <p data-i18n="tools.step2AuthDesc">配置好 config.toml 后，打开 Codex 桌面应用。在登录界面点击「使用其他方式登录」：</p>
