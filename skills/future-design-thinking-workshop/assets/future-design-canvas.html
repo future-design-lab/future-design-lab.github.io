@@ -1390,13 +1390,17 @@
       return JSON.parse(JSON.stringify(bundledState));
     }
 
+    function blankState() {
+      return { current: 0, lang: "zh", data: emptyData() };
+    }
+
     function loadState() {
       try {
         const saved = JSON.parse(localStorage.getItem(storageKey) || "null");
         if (saved && saved.data && hasCanvasContent(saved.data)) return saved;
-        return cloneBundledState();
+        return blankState();
       } catch {
-        return cloneBundledState();
+        return blankState();
       }
     }
 
@@ -1694,7 +1698,10 @@
     }
 
     async function pollExternalState() {
-      if (location.protocol === "file:") return;
+      // Try to read the sibling state file in BOTH file:// and http(s):// modes.
+      // Under a local server this always works (true live sync). Under file://
+      // some browsers allow same-folder fetch and some block it via CORS — if it
+      // is blocked we simply stay in manual mode silently, no error, no slowdown.
       try {
         const response = await fetch(`${externalStatePath}?t=${Date.now()}`, { cache: "no-store" });
         if (!response.ok) return;
@@ -1703,7 +1710,7 @@
         lastExternalState = raw;
         applyExternalState(JSON.parse(raw));
       } catch {
-        // Stay in manual mode if no live state file is available.
+        // No reachable state file (e.g. file:// with CORS lock) -> manual mode.
       }
     }
 

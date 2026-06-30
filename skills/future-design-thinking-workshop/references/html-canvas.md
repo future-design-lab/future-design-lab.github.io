@@ -30,23 +30,33 @@ Use the HTML canvas when:
 4. Use the canvas summary as the source of truth when continuing the conversation.
 5. When the user asks for a final proposal, export JSON from the canvas and assemble the final output using `output-templates.md`.
 
-## Live Preview Workflow
+## Opening The Canvas + Live Sync
 
-Use this workflow when the user expects the skill conversation and the HTML preview to stay connected.
+This skill runs on the **student's own machine**, so the agent, the canvas file, and the browser are all on the same computer. Live sync is therefore possible and is the recommended mode. The canvas opens **blank at Stage 1** and autosaves the student's edits in their browser via `localStorage`.
 
-1. Create a working preview folder in the current workspace, for example `output/future-design-workshop/`.
-2. Copy `assets/future-design-canvas.html` and `assets/future-design-canvas-state.json` into that folder.
-3. Start a local static server from that folder.
-4. Open `http://localhost:<port>/future-design-canvas.html` in the right-side browser preview.
-5. During the conversation, keep a workshop state object in memory.
-6. After every meaningful user answer or AI synthesis, write the current state to `future-design-canvas-state.json`.
-7. The HTML page will poll that JSON file and refresh the canvas automatically.
+### Recommended: local server (true live sync)
 
-The state file may use this shape:
+1. Copy `assets/future-design-canvas.html` and `assets/future-design-canvas-state.json` into a local working folder, e.g. `output/future-design-workshop/`.
+2. Start a static server in that folder, e.g. `python3 -m http.server 8123` (or `npx serve`).
+3. Open `http://localhost:8123/future-design-canvas.html`. This is local to the student's machine, so it opens instantly.
+4. During the conversation, after each agreed stage result, **write the current state to `future-design-canvas-state.json`**. The page polls it (~every 1.2s) and refreshes the matching cards automatically — the canvas tracks the discussion live.
+
+### Fallback: `file://` (no server)
+
+If no server can be started, the student double-clicks `future-design-canvas.html`. It still opens blank at Stage 1 and works manually. Two ways to reflect progress:
+
+- The student clicks **Import JSON** and selects the latest `future-design-canvas-state.json`, or
+- The agent edits the `bundledState` block in the HTML and the student refreshes the page.
+
+Under `file://`, the page still *attempts* to read the sibling `future-design-canvas-state.json`; some browsers allow same-folder fetch (giving automatic refresh) and some block it via CORS (falling back to manual). Either way the page never errors or hangs.
+
+Never give the student a `localhost` URL that points at a *different* machine — that is what makes the page appear to load forever.
+
+The state file uses this shape (start blank, fill as you go):
 
 ```json
 {
-  "current": 1,
+  "current": 0,
   "lang": "zh",
   "data": {
     "brief": {},
@@ -63,11 +73,9 @@ The state file may use this shape:
 }
 ```
 
-The `headline` object may include an `image` field pointing to a relative path or URL for the Tomorrow Headline visual. When Stage 8 is complete, generate a newspaper front page, web headline, or launch-poster style image and write it to `headline.image`.
+The `headline` object may include an `image` field pointing to a relative path or URL for the Tomorrow Headline visual. When Stage 8 is complete, generate a newspaper front page, web headline, or launch-poster style image and reference it from `headline.image`.
 
-Use zero-based `current`: Stage 1 is `0`, Stage 2 is `1`, and so on. Keep `lang` as `zh` or `en`.
-
-If the HTML is opened directly as `file://`, it still works manually, but live AI updates require the local server so the page can fetch `future-design-canvas-state.json`.
+Use zero-based `current`: Stage 1 is `0`, Stage 2 is `1`, and so on. Advance `current` as the discussion moves forward so the live canvas highlights the active stage. Keep `lang` as `zh` or `en`.
 
 ## Facilitation Rule
 

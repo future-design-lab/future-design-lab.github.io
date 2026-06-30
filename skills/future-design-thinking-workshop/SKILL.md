@@ -64,9 +64,16 @@ For detailed step-by-step instructions, read `references/stage-guides.md` when r
 
 For artifact schemas, read `references/output-templates.md` before producing or revising formal outputs. Use those templates unless the user asks for another format.
 
-For a more visual student-facing workflow, use `assets/future-design-canvas.html` and read `references/html-canvas.md`. The HTML canvas is a single-file workshop board with stage navigation, editable artifact cards, a synthesis canvas, Backcasting timeline, local autosave, JSON export/import, and print support.
+For a more visual student-facing workflow, use `assets/future-design-canvas.html` and read `references/html-canvas.md`. The HTML canvas is a single-file workshop board with stage navigation, editable artifact cards, a synthesis canvas, Backcasting timeline, local autosave (browser localStorage), JSON export/import, and print support. It opens **blank at Stage 1** on first load.
 
-When the user wants students to use this skill interactively, run the live preview workflow in `references/html-canvas.md`: open the HTML canvas in the right-side browser preview, keep the conversation moving through the workshop stages, and update `future-design-canvas-state.json` after each meaningful user answer so the preview reflects the dialogue.
+This skill runs on the **student's own machine** (their local Codex / agent), so the agent, the canvas file, and the browser are all on the same computer. That makes true live sync possible. Open the canvas at the very first stage and keep it updated as the discussion progresses:
+
+1. Copy `assets/future-design-canvas.html` and `assets/future-design-canvas-state.json` into a local working folder, e.g. `output/future-design-workshop/`.
+2. **Start a local static server in that folder** and open the canvas via `http://localhost:<port>/future-design-canvas.html`. Example: `python3 -m http.server 8123` then open `http://localhost:8123/future-design-canvas.html`. Because the server runs on the student's own machine, `localhost` opens instantly — this is local, not remote.
+3. As the conversation moves through the stages, **write the agreed result of each stage into `future-design-canvas-state.json`** (schema in `references/html-canvas.md`). The page polls that file and refreshes automatically — the canvas updates live during the discussion.
+4. If a local server cannot be started, fall back to **file:// mode**: have the student double-click `future-design-canvas.html`. The page still opens blank and works manually. To reflect new progress, either (a) the student clicks **Import JSON** and loads the latest `future-design-canvas-state.json`, or (b) the agent edits the `bundledState` block inside the HTML and the student refreshes the page.
+
+Always start at Stage 1 with a blank canvas. Never hand the student a remote `localhost` URL from a different machine.
 
 After Stage 10, do not treat the process as finished if the user needs course deliverables. Read `references/post-workshop-production-router.zh-CN.md` and continue as the workflow controller for production: first organize the completed method outputs into a local student/team project folder, then recommend an appropriate mix of rich presentation formats, then call or install the needed production skills in sequence. Each production skill must read the prior artifact, save its output into the project folder, and update the asset/prompt index before the next skill runs.
 
