@@ -221,13 +221,13 @@ Read first: Provotyping Card and Interpretation.
 Method:
 - Pick a future year. Use 2030 for early implementation, 2040 for scaled systems, 2050 for transformed society.
 - Write a news title and short article. Include place, actors, what changed, how it was achieved, and why it matters. Add a quote or controversy if useful. Optionally create separate headlines for 2030, 2040, and 2050.
-- **The Tomorrow Headline is delivered as a generated IMAGE, not as text on the page.** The canvas `headline.image` field must hold a real image path — text alone does not satisfy this stage. The image should look like a newspaper front page, a 微博/social-media trending headline card, a news website hero, a civic announcement poster, a dramatic launch visual, or a future media screenshot — a believable piece of future news media, not a generic illustration.
-- **Generate the image with the `generate-multimodal-media` skill** (do not just describe it, and do not leave a text placeholder):
-  1. First discuss with the user and **agree on the headline image**: which medium (报纸头版 / 微博热搜 / 新闻网站 / 公告海报 / 发布会大屏), the future year, the headline text shown in the image, the visual tone, and the key scene. Confirm before generating.
-  2. Once confirmed, **call `generate-multimodal-media`** to produce the image (image model `gpt-image-2` via `POST /images/generations` at `https://llm.mantai.me/v1`; the skill handles `MANTA_API_KEY`). If that skill is not yet installed, install it from `assets/downloads/generate-multimodal-media.zip` first.
-  3. Build the image prompt from the agreed details: the medium/layout, the actual headline + subheadline text to render, place and year, the central future scene, and a news/launch mood. Aim for a wide news layout (e.g. `size` 1536x1024 or similar) so it reads as a front page / hero.
+- **The Tomorrow Headline is delivered as a fully laid-out, finished piece of news media — NOT a plain photo or scene illustration.** It must look like a real, designed media artifact with the headline text typeset INTO the layout: a newspaper front page (报头/masthead + headline + columns of body text + photo + caption), a 微博热搜/social-media trending headline banner (平台 UI + 热搜标题 + 转评赞 + 配图), a news website hero (站点导航 + 大标题 + 导语 + 配图), a civic announcement poster (标题 + 正文 + 机构落款), or a launch-screen/big-screen graphic. The actual headline, subheadline, and key story text MUST appear as readable, designed typography composed within the layout — a bare scenic image with no text does NOT satisfy this stage.
+- **Generate it with the `generate-multimodal-media` skill** (do not just describe it, and do not leave a text placeholder):
+  1. First discuss with the user and **agree on the headline artifact**: which media format and layout (报纸头版 / 微博热搜 banner / 新闻网站 hero / 公告海报 / 发布会大屏), the future year, the **exact headline + subheadline + body/lead text to typeset into the layout**, the masthead/site/platform name, the visual tone, and the central scene/photo. Confirm before generating.
+  2. Once confirmed, **call `generate-multimodal-media`** (image model `gpt-image-2` via `POST /images/generations` at `https://llm.mantai.me/v1`; the skill handles `MANTA_API_KEY`). If that skill is not yet installed, install it from `assets/downloads/generate-multimodal-media.zip` first.
+  3. **Write the image prompt as a layout/composition brief, not just a scene.** Spell out the media format and its layout regions, name each text block and quote its exact wording so the model renders it as legible typography, place the masthead/site/platform name, the photo area + caption, date/year, and a news/launch mood. Explicitly state that the headline and body text must be rendered as clear, correctly-composed type within the layout. Use a layout-appropriate aspect ratio (e.g. tall portrait `size` like 1024x1536 for a newspaper front page or poster; wide `size` like 1536x1024 for a website hero or big screen; near-square for a 微博 card).
   4. **Save the returned image** into the project / live-preview folder (next to `future-design-canvas.html`, e.g. `headline-2040.png`) and write that path to `headline.image` in `future-design-canvas-state.json` so the canvas renders it.
-  5. Show the result to the user and offer to regenerate or refine (different medium, tone, or headline wording) before locking the stage.
+  5. Show the result to the user and **check the typography**: are the headline and key text legible and correctly spelled? If the layout is wrong, text is garbled, or it reads as a plain photo, refine the prompt and regenerate before locking the stage.
 
 Facilitation prompts:
 - What would a newspaper report if this concept succeeded?
@@ -242,7 +242,8 @@ Required canvas fields (`headline`): `year`, `place`, `headline`, `subheadline`,
 Completion check (gate):
 - The headline reads like a plausible future news story, not a marketing slogan.
 - `headline.image` points to a **real generated image file** (produced via `generate-multimodal-media`), saved next to the canvas and rendering on the page. A text-only headline with no image **fails** this gate.
-- The image makes the future scenario immediately visible and carries a news or launch feeling rather than reading as a generic illustration.
+- The image is a **fully laid-out news/media artifact with the headline and key text typeset into the layout** (newspaper front page, 微博热搜 banner, news hero, poster, or launch screen) — legible, correctly composed typography. A bare scenic photo or illustration with no headline text laid out on it **fails** this gate.
+- The artifact makes the future scenario immediately visible and carries a real news/launch feeling rather than reading as a generic illustration.
 
 ## 9. Backcasting
 
