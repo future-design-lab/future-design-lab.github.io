@@ -126,6 +126,15 @@
       .success-box strong {
         color: var(--accent-2);
       }
+      .lang-img {
+        display: none;
+      }
+      html[lang="zh-CN"] .lang-img-zh {
+        display: block;
+      }
+      html[lang="en"] .lang-img-en {
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -211,6 +220,30 @@
             </div>
           </div>
 
+          <div class="guide-step">
+            <span class="guide-step-number">2</span>
+            <h3 data-i18n="verify.step2Title">验证 Future Design Skill</h3>
+            <p data-i18n="verify.step2Desc">在 Codex 中启动未来设计工作坊，确认 future-design Skill 配置正常：</p>
+
+            <div class="check-item">
+              <span class="check-icon">?</span>
+              <div>
+                <h4 data-i18n="verify.step2Send">发送启动请求</h4>
+                <p data-i18n="verify.step2SendDesc">在 Codex 对话框中输入启动工作坊的指令，例如：</p>
+                <div class="chat-bubble" data-i18n="verify.step2Prompt">我想开始工作坊</div>
+              </div>
+            </div>
+
+            <p data-i18n="verify.step2Wait">Codex 会加载 Future Design Skill，进入第 1/10 阶段「工作坊简报界定」，并引导你回答主题、人群、目标年份与最终产出：</p>
+            <img class="codex-hero-img lang-img lang-img-zh" src="../assets/future-design-skill-zh.png" alt="Future Design skill verification" />
+            <img class="codex-hero-img lang-img lang-img-en" src="../assets/future-design-skill-en.png" alt="Future Design skill verification" />
+
+            <div class="success-box">
+              <strong data-i18n="verify.step2Pass">通过标准：</strong>
+              <span data-i18n="verify.step2PassDesc">Skill 成功加载并返回 10 阶段工作坊流程，进入第 1 阶段引导提问。如果没有进入工作坊流程，请按 Skill 安装页面的步骤重新安装 future-design Skill。</span>
+            </div>
+          </div>
+
         </div>
       </section>
     </main>
@@ -256,6 +289,14 @@
           "verify.step1Wait": "Codex 会调用 Seedance 2.0 模型生成视频，整个过程大约需要 3-5 分钟。生成完成后会返回视频文件：",
           "verify.step1Pass": "通过标准：",
           "verify.step1PassDesc": "视频文件成功生成并可预览。如果提示缺少 MANTA_API_KEY，请按 Skill 安装页面的步骤配置环境变量。",
+          "verify.step2Title": "验证 Future Design Skill",
+          "verify.step2Desc": "在 Codex 中启动未来设计工作坊，确认 future-design Skill 配置正常：",
+          "verify.step2Send": "发送启动请求",
+          "verify.step2SendDesc": "在 Codex 对话框中输入启动工作坊的指令，例如：",
+          "verify.step2Prompt": "我想开始工作坊",
+          "verify.step2Wait": "Codex 会加载 Future Design Skill，进入第 1/10 阶段「工作坊简报界定」，并引导你回答主题、人群、目标年份与最终产出：",
+          "verify.step2Pass": "通过标准：",
+          "verify.step2PassDesc": "Skill 成功加载并返回 10 阶段工作坊流程，进入第 1 阶段引导提问。如果没有进入工作坊流程，请按 Skill 安装页面的步骤重新安装 future-design Skill。",
         },
         en: {
           "sidebar.title": "Documentation",
@@ -294,6 +335,14 @@
           "verify.step1Wait": "Codex will use the Seedance 2.0 model to generate the video. The process takes about 3-5 minutes. Once complete, it returns the video file:",
           "verify.step1Pass": "Pass criteria: ",
           "verify.step1PassDesc": "The video file is generated and can be previewed. If it reports a missing MANTA_API_KEY, configure the environment variable as described on the Skill Install page.",
+          "verify.step2Title": "Verify Future Design Skill",
+          "verify.step2Desc": "Start the future design workshop in Codex to confirm the future-design Skill is configured correctly:",
+          "verify.step2Send": "Send a Start Request",
+          "verify.step2SendDesc": "Type a command to start the workshop in Codex, for example:",
+          "verify.step2Prompt": "i want to start our workshop",
+          "verify.step2Wait": "Codex will load the Future Design Skill, enter Stage 1/10 \u201cWorkshop Brief\u201d, and guide you through the theme, audience, target year, and final output:",
+          "verify.step2Pass": "Pass criteria: ",
+          "verify.step2PassDesc": "The Skill loads and returns the 10-stage workshop flow, entering Stage 1 with guiding questions. If it does not enter the workshop flow, reinstall the future-design Skill as described on the Skill Install page.",
         },
       };
 
