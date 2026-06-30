@@ -640,9 +640,11 @@ dd {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 253, 247, 0.86);
+  box-shadow: 0 16px 42px rgba(35, 28, 18, 0.08);
 }
 
 .skill-lead {
+  border-top: 4px solid var(--accent);
   padding: 22px;
 }
 
@@ -676,6 +678,7 @@ dd {
 }
 
 .skill-flow article {
+  border-top: 4px solid var(--accent-2);
   min-width: 0;
   padding: 20px;
 }
@@ -708,6 +711,7 @@ dd {
 
 .skill-callout {
   align-items: end;
+  border-left: 4px solid var(--accent);
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 20px;
@@ -726,6 +730,89 @@ dd {
   font-weight: 800;
   padding: 12px 14px;
   white-space: nowrap;
+}
+
+.skill-downloads {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 253, 247, 0.92);
+  box-shadow: 0 16px 42px rgba(35, 28, 18, 0.08);
+  margin-top: 16px;
+  padding: 22px;
+}
+
+.skill-download-head {
+  align-items: end;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px;
+}
+
+.skill-download-head p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.download-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.install-command {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 18px;
+}
+
+.install-command span {
+  color: var(--accent);
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.install-command code {
+  background: var(--code);
+  border-radius: 6px;
+  color: var(--panel);
+  display: block;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.55;
+  overflow-x: auto;
+  padding: 12px 14px;
+}
+
+.skill-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.skill-link-grid a {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(246, 244, 238, 0.78);
+  color: var(--code);
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  padding: 11px 12px;
+}
+
+.skill-link-grid a:hover {
+  border-color: var(--accent);
+  background: rgba(182, 77, 47, 0.1);
 }
 
 @media (max-width: 980px) {
@@ -747,7 +834,8 @@ dd {
   .timeline,
   .workflow,
   .skill-overview,
-  .skill-callout {
+  .skill-callout,
+  .skill-download-head {
     grid-template-columns: 1fr;
   }
 
@@ -765,6 +853,14 @@ dd {
 
   .skill-callout code {
     white-space: normal;
+  }
+
+  .download-actions {
+    justify-content: flex-start;
+  }
+
+  .skill-link-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -786,6 +882,7 @@ dd {
   .output-list,
   .gallery,
   .skill-flow,
+  .skill-link-grid,
   .metric-grid {
     grid-template-columns: 1fr;
   }
