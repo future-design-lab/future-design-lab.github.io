@@ -52,6 +52,7 @@
         </div>
       </div>
       <a href="#workshop" data-i18n="sidebar.workshop">AI Workshop Flow</a>
+      <a href="#skills" data-i18n="sidebar.skills">Skills</a>
       <a href="#deliverables" data-i18n="sidebar.outputs">Outputs</a>
     </aside>
 
@@ -67,6 +68,7 @@
           <div class="hero-actions">
             <a class="button primary" href="#tracks" data-i18n="hero.ctaTracks">Explore Tracks</a>
             <a class="button" href="#workshop" data-i18n="hero.ctaWorkshop">Workshop Flow</a>
+            <a class="button" href="#skills" data-i18n="hero.ctaSkills">Skill System</a>
           </div>
         </div>
         <div class="hero-panel" aria-label="Program snapshot">
@@ -279,6 +281,88 @@
           <img src="./assets/workshop/workshop-page-001.png" alt="Workshop title slide" />
           <img src="./assets/workshop/workshop-page-006.png" alt="Future Signals analysis model" />
           <img src="./assets/workshop/workshop-page-008.png" alt="Tomorrow Headline analysis model" />
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="skills.eyebrow">Codex Skill System</p>
+          <h2 data-i18n="skills.title">从未来设计方法到完整方案呈现的 AI Skill 套件</h2>
+          <p class="section-lede" data-i18n="skills.lede">
+            这套 skill 把课程工作流拆成一个总控大 skill 和多个可独立调用的小 skill。学生可以从未来信号开始一步步完成方法产物，也可以在方案完成后继续生成项目文档、PPT、效果图、交互原型、故事板、视频和本地项目档案。
+          </p>
+        </div>
+
+        <div class="skill-overview">
+          <article class="skill-lead">
+            <span data-i18n="skills.controllerLabel">Controller</span>
+            <h3>future-design-thinking-workshop</h3>
+            <p data-i18n="skills.controllerDesc">
+              总控大 skill，负责串联完整 Future Design Thinking 流程：从主题界定、未来信号、STEEP、本地挑战、未来解释、Provotyping、明日头条、Backcasting，到最终方案和后期制作。
+            </p>
+          </article>
+          <article class="skill-lead">
+            <span data-i18n="skills.projectControllerLabel">Full Project</span>
+            <h3>future-design-project-controller</h3>
+            <p data-i18n="skills.projectControllerDesc">
+              项目级总控小 skill，负责把前期方法、后期呈现、资产归档和最终交付检查连成一个连续项目工作流。
+            </p>
+          </article>
+        </div>
+
+        <div class="skill-flow">
+          <article>
+            <strong>01</strong>
+            <h3 data-i18n="skills.phaseA">方法探索</h3>
+            <p data-i18n="skills.phaseADesc">完成未来信号、STEEP、本地挑战、信号挑战配对、未来解释和概念卡。</p>
+            <ul>
+              <li>future-signal-scout</li>
+              <li>steep-analysis</li>
+              <li>local-challenge-framing</li>
+              <li>signal-challenge-pairing</li>
+              <li>future-interpretation-builder</li>
+              <li>provotyping-card-builder</li>
+            </ul>
+          </article>
+          <article>
+            <strong>02</strong>
+            <h3 data-i18n="skills.phaseB">未来叙事与路线</h3>
+            <p data-i18n="skills.phaseBDesc">把概念转化成可感知的未来新闻和可执行的倒推路线。</p>
+            <ul>
+              <li>tomorrow-headline-builder</li>
+              <li>backcasting-roadmap-builder</li>
+            </ul>
+          </article>
+          <article>
+            <strong>03</strong>
+            <h3 data-i18n="skills.phaseC">后期呈现制作</h3>
+            <p data-i18n="skills.phaseCDesc">根据项目类型推荐合适呈现组合，并调用文档、PPT、图片、原型、视频等制作 skill。</p>
+            <ul>
+              <li>project-presentation-router</li>
+              <li>documents / Presentations / imagegen</li>
+              <li>playwright / Figma / xyq-nest-skill</li>
+            </ul>
+          </article>
+          <article>
+            <strong>04</strong>
+            <h3 data-i18n="skills.phaseD">本地归档与交付</h3>
+            <p data-i18n="skills.phaseDDesc">把设计方法产物、生成资产、提示词、源文件和最终交付物保存到学生本地项目文件夹。</p>
+            <ul>
+              <li>project-asset-archive</li>
+              <li>project-delivery-checker</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="skill-callout">
+          <div>
+            <p class="eyebrow" data-i18n="skills.archiveEyebrow">Local Archive</p>
+            <h3 data-i18n="skills.archiveTitle">每个学生都有一个结构化项目文件夹</h3>
+            <p data-i18n="skills.archiveDesc">
+              skill 会把项目整理为 00_project-brief、01_method-process、03_visual-assets、04_prototypes、05_documents、06_presentations、07_video-audio、08_delivery 和 09_ai-process-log，确保过程、资产和最终提交都能被追踪。
+            </p>
+          </div>
+          <code>future-design-projects/&lt;team-project&gt;/</code>
         </div>
       </section>
 
