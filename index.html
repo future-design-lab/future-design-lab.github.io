@@ -55,7 +55,7 @@
       <a href="#skills" data-i18n="sidebar.skills">Skills</a>
       <a href="#deliverables" data-i18n="sidebar.outputs">Outputs</a>
       <div class="sidebar-group">
-        <a data-i18n="sidebar.tools">工具使用</a>
+        <a href="#tools" data-i18n="sidebar.tools">工具使用</a>
         <div class="sidebar-children" aria-label="Tools pages">
           <a href="./tools/codex-setup.html" data-i18n="tools.codex">Codex CLI 配置</a>
           <a href="./tools/skill-install.html" data-i18n="tools.skills">Skill 安装</a>
@@ -432,17 +432,36 @@
         </div>
       </section>
 
-      <section id="support" class="section support-section">
+      <section id="tools" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="toolsSection.eyebrow">Tools</p>
+          <h2 data-i18n="toolsSection.title">工具使用</h2>
+        </div>
+
         <div class="support-inner">
           <div class="support-text">
-            <p class="eyebrow" data-i18n="support.eyebrow">Technical Support</p>
-            <h2 data-i18n="support.title">遇到问题？扫码联系我们</h2>
+            <h3 data-i18n="support.title">遇到问题？扫码联系我们</h3>
             <p data-i18n="support.desc">如果在使用过程中遇到技术问题、Token 充值、API 配置等，可以通过微信扫码联系 manta.ai 获取帮助。</p>
           </div>
           <div class="support-qr">
             <img src="./assets/wechat-qr.png" alt="WeChat QR code — manta.ai" />
             <span data-i18n="support.scan">微信扫码添加</span>
           </div>
+        </div>
+
+        <div class="tool-links">
+          <a href="./tools/codex-setup.html" class="tool-link-card">
+            <h3 data-i18n="tools.codex">Codex 配置</h3>
+            <p data-i18n="toolsSection.codexDesc">安装 Codex CLI 并配置 mantai LLM API 服务。</p>
+          </a>
+          <a href="./tools/skill-install.html" class="tool-link-card">
+            <h3 data-i18n="tools.skills">Skill 安装</h3>
+            <p data-i18n="toolsSection.skillDesc">下载并安装设计工坊和多模态生成 Skill。</p>
+          </a>
+          <a href="./tools/verify.html" class="tool-link-card">
+            <h3 data-i18n="tools.verify">环境验证</h3>
+            <p data-i18n="toolsSection.verifyDesc">验证 Skill 和 API 配置是否正常工作。</p>
+          </a>
         </div>
       </section>
 

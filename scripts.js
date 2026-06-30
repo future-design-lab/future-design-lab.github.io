@@ -169,6 +169,11 @@ const translations = {
     "support.title": "遇到问题？扫码联系我们",
     "support.desc": "如果在使用过程中遇到技术问题、Token 充值、API 配置等，可以通过微信扫码联系 manta.ai 获取帮助。",
     "support.scan": "微信扫码添加",
+    "toolsSection.eyebrow": "Tools",
+    "toolsSection.title": "工具使用",
+    "toolsSection.codexDesc": "安装 Codex CLI 并配置 mantai LLM API 服务。",
+    "toolsSection.skillDesc": "下载并安装设计工坊和多模态生成 Skill。",
+    "toolsSection.verifyDesc": "验证 Skill 和 API 配置是否正常工作。",
   },
   en: {
     "nav.tracks": "Tracks",
@@ -335,8 +340,11 @@ const translations = {
     "support.title": "Need help? Scan to contact us",
     "support.desc": "For technical issues, token recharge, API configuration, or any other questions, scan the QR code to contact manta.ai via WeChat.",
     "support.scan": "Scan to add on WeChat",
-  },
-};
+    "toolsSection.eyebrow": "Tools",
+    "toolsSection.title": "Tools & Setup",
+    "toolsSection.codexDesc": "Install Codex CLI and configure the mantai LLM API service.",
+    "toolsSection.skillDesc": "Download and install workshop and multimodal generation Skills.",
+    "toolsSection.verifyDesc": "Verify that Skills and API configuration are working correctly.",
 
 function applyLanguage(lang) {
   const current = translations[lang] ? lang : "zh";
