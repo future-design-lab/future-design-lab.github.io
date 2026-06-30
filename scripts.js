@@ -5,8 +5,6 @@ let currentLanguage = "zh";
 
 const translations = {
   zh: {
-    "brand.name": "Manta AI",
-    "brand.tagline": "Future Design Lab 官网",
     "nav.tracks": "赛道",
     "nav.corpus": "语料库",
     "nav.workshop": "工作坊",
@@ -151,12 +149,12 @@ const translations = {
     "skills.downloadZip": "下载完整 ZIP",
     "skills.openGithub": "打开 Skills 文件夹",
     "skills.installLabel": "Codex 安装命令",
-    "skills.queryLabel": "安装后测试 Query",
-    "skills.query1": "帮我为“北京中小学生 AI 教育”寻找未来信号。",
-    "skills.query2": "把这个未来信号做 STEEP 分析。",
-    "skills.query3": "根据这个方案生成明日头条和 Backcasting 路线图。",
-    "skills.query4": "我的方案完成了，请推荐后期呈现形式并建立本地项目档案。",
-    "skills.query5": "检查我的最终提交是否完整。",
+    "skills.queryLabel": "快速验证 Query",
+    "skills.query1": "列出我当前已安装的 Future Design 相关 skills。",
+    "skills.query2": "用 future-design-project-controller 检查：如果主题是“北京中小学生 AI 教育”，你会按什么顺序带我完成？只列阶段名，不要生成方案。",
+    "skills.query3": "用 future-signal-scout 为“北京中小学生 AI 教育”列 3 个未来信号标题即可，不要展开分析。",
+    "skills.query4": "启动 Future Design Project Controller，模拟检查完整工作流是否可运行：列出每一步需要读取的上一步产物、会调用的 skill、会生成的产物名称。不要生成实际方案内容。",
+    "skills.query5": "说明：这些 query 只用于验证安装、触发和调用链；完整方案仍需要按工作坊步骤逐步完成。",
     "outputs.eyebrow": "产出要求",
     "outputs.title": "AI 共创工作坊产出要求",
     "outputs.proto": "由未来信号和地方挑战组合形成，用于界定机会与冲突。",
@@ -165,8 +163,6 @@ const translations = {
     "outputs.backcasting": "以市长、商业领导者、个体行动者等角色倒推行动路径。",
   },
   en: {
-    "brand.name": "Manta AI",
-    "brand.tagline": "Future Design Lab",
     "nav.tracks": "Tracks",
     "nav.corpus": "Corpus",
     "nav.workshop": "Workshop",
@@ -311,12 +307,12 @@ const translations = {
     "skills.downloadZip": "Download ZIP",
     "skills.openGithub": "Open Skills Folder",
     "skills.installLabel": "Codex install command",
-    "skills.queryLabel": "Post-install test queries",
-    "skills.query1": "Help me find future signals for AI education for primary and secondary students in Beijing.",
-    "skills.query2": "Run a STEEP analysis on this future signal.",
-    "skills.query3": "Generate a Tomorrow Headline and a Backcasting roadmap for this concept.",
-    "skills.query4": "My proposal is complete. Recommend final presentation formats and create a local project archive.",
-    "skills.query5": "Check whether my final submission package is complete.",
+    "skills.queryLabel": "Quick validation queries",
+    "skills.query1": "List the Future Design related skills currently installed.",
+    "skills.query2": "Use future-design-project-controller to check: if my topic is AI education for primary and secondary students in Beijing, what sequence would you guide me through? List stage names only; do not generate a proposal.",
+    "skills.query3": "Use future-signal-scout to list only 3 future signal titles for AI education for primary and secondary students in Beijing. Do not expand the analysis.",
+    "skills.query4": "Start Future Design Project Controller and dry-run the full workflow: list what each step reads from the previous step, which skill it calls, and what artifact it creates. Do not generate actual proposal content.",
+    "skills.query5": "Note: these queries only validate installation, triggering, and workflow routing. A complete proposal still needs to be completed step by step through the workshop.",
     "outputs.eyebrow": "Outputs",
     "outputs.title": "AI co-creation workshop outputs",
     "outputs.proto": "A combination of future signals and local challenges used to define opportunities and tensions.",
@@ -333,18 +329,8 @@ function applyLanguage(lang) {
   document.documentElement.lang = current === "zh" ? "zh-CN" : "en";
   document.title =
     current === "zh"
-      ? "Manta AI | 国际太空艺术设计共创营"
-      : "Manta AI | International Space Art & Design Collaborative Camp";
-
-  const description = document.querySelector('meta[name="description"]');
-  if (description) {
-    description.setAttribute(
-      "content",
-      current === "zh"
-        ? "Manta AI 官网：国际太空艺术设计共创营、未来设计材料与 AI 共创工作流。"
-        : "Manta AI official site for the International Space Art & Design Collaborative Camp, future design materials, and AI co-creation workflow.",
-    );
-  }
+      ? "国际太空艺术设计共创营"
+      : "International Space Art & Design Collaborative Camp";
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
