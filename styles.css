@@ -644,7 +644,6 @@ dd {
 }
 
 .skill-lead {
-  border-top: 4px solid var(--accent);
   padding: 22px;
 }
 
@@ -678,7 +677,6 @@ dd {
 }
 
 .skill-flow article {
-  border-top: 4px solid var(--accent-2);
   min-width: 0;
   padding: 20px;
 }
@@ -711,7 +709,6 @@ dd {
 
 .skill-callout {
   align-items: end;
-  border-left: 4px solid var(--accent);
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 20px;
