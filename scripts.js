@@ -19,6 +19,7 @@ const translations = {
     "sidebar.workshop": "共创流程",
     "sidebar.skills": "Skill 系统",
     "sidebar.outputs": "产出要求",
+    "sidebar.tools": "工具使用",
     "tools.codex": "Codex 配置",
     "tools.skills": "Skill 安装",
     "tools.verify": "环境验证",
@@ -190,6 +191,7 @@ const translations = {
     "sidebar.workshop": "Workshop Flow",
     "sidebar.skills": "Skill System",
     "sidebar.outputs": "Outputs",
+    "sidebar.tools": "Tools",
     "tools.codex": "Codex Setup",
     "tools.skills": "Skill Install",
     "tools.verify": "Verify Setup",
@@ -345,6 +347,8 @@ const translations = {
     "toolsSection.codexDesc": "Install Codex CLI and configure the mantai LLM API service.",
     "toolsSection.skillDesc": "Download and install workshop and multimodal generation Skills.",
     "toolsSection.verifyDesc": "Verify that Skills and API configuration are working correctly.",
+  },
+};
 
 function applyLanguage(lang) {
   const current = translations[lang] ? lang : "zh";
