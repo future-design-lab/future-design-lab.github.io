@@ -380,3 +380,18 @@ languageButtons.forEach((button) => {
 });
 
 applyLanguage(localStorage.getItem("space-camp-language") || "zh");
+
+document.querySelectorAll(".sidebar-group").forEach((group) => {
+  if (group.querySelector(".sidebar-children .active")) {
+    group.classList.add("open");
+  }
+  const toggle = group.querySelector(":scope > a");
+  if (toggle) {
+    toggle.addEventListener("click", (e) => {
+      if (!toggle.getAttribute("href") || toggle.getAttribute("href") === "#") {
+        e.preventDefault();
+      }
+      group.classList.toggle("open");
+    });
+  }
+});

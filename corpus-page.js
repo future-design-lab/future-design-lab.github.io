@@ -18,6 +18,7 @@ const ui = {
     "sidebar.corpus": "语料库",
     "sidebar.cases": "案例库",
     "sidebar.workshop": "AI 共创流程",
+    "sidebar.skills": "Skill 系统",
     "sidebar.outputs": "产出要求",
     "corpus1.short": "独立于地球",
     "corpus2.short": "地外迷域",
@@ -44,6 +45,7 @@ const ui = {
     "sidebar.corpus": "Corpus Library",
     "sidebar.cases": "Case Library",
     "sidebar.workshop": "AI Workshop Flow",
+    "sidebar.skills": "Skill System",
     "sidebar.outputs": "Outputs",
     "corpus1.short": "Independent from Earth",
     "corpus2.short": "Alien Mind",
@@ -207,3 +209,18 @@ languageButtons.forEach((button) => {
 });
 
 applyLanguage(localStorage.getItem("space-camp-language") || "zh");
+
+document.querySelectorAll(".sidebar-group").forEach((group) => {
+  if (group.querySelector(".sidebar-children .active")) {
+    group.classList.add("open");
+  }
+  const toggle = group.querySelector(":scope > a");
+  if (toggle) {
+    toggle.addEventListener("click", (e) => {
+      if (!toggle.getAttribute("href") || toggle.getAttribute("href") === "#") {
+        e.preventDefault();
+      }
+      group.classList.toggle("open");
+    });
+  }
+});

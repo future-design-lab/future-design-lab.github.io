@@ -156,10 +156,19 @@ a {
   margin-bottom: 4px;
 }
 
+.sidebar-group > a {
+  cursor: pointer;
+}
+
 .sidebar-children {
   border-left: 1px solid var(--line);
   margin: 2px 0 8px 18px;
   padding-left: 8px;
+  display: none;
+}
+
+.sidebar-group.open > .sidebar-children {
+  display: block;
 }
 
 .sidebar-children a {
