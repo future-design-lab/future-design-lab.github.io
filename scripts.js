@@ -165,6 +165,10 @@ const translations = {
     "outputs.interpretation": "用一句可讨论、可修改的未来解释串联 A、B、C 要素。",
     "outputs.headline": "以 2030/2040/2050 的新闻标题呈现可感知未来。",
     "outputs.backcasting": "以市长、商业领导者、个体行动者等角色倒推行动路径。",
+    "support.eyebrow": "Technical Support",
+    "support.title": "遇到问题？扫码联系我们",
+    "support.desc": "如果在使用过程中遇到技术问题、Token 充值、API 配置等，可以通过微信扫码联系 manta.ai 获取帮助。",
+    "support.scan": "微信扫码添加",
   },
   en: {
     "nav.tracks": "Tracks",
@@ -327,6 +331,10 @@ const translations = {
     "outputs.interpretation": "A discussable and editable sentence that connects the A, B, and C elements.",
     "outputs.headline": "A perceptible future presented as 2030, 2040, or 2050 news headlines.",
     "outputs.backcasting": "Action pathways backcast through roles such as mayor, business leader, and individual actor.",
+    "support.eyebrow": "Technical Support",
+    "support.title": "Need help? Scan to contact us",
+    "support.desc": "For technical issues, token recharge, API configuration, or any other questions, scan the QR code to contact manta.ai via WeChat.",
+    "support.scan": "Scan to add on WeChat",
   },
 };
 
