@@ -283,7 +283,7 @@
         <p class="hero-subtitle" data-i18n="tools.pageSubtitle">INSTALL & CONFIGURE CODEX WITH MANTAI LLM</p>
         <p class="lede" data-i18n="tools.pageLede">Codex 是 OpenAI 推出的桌面端 AI 编程智能体，由 ChatGPT 提供技术支持。通过以下步骤，你可以将其连接到 mantai LLM 服务，使用 AI 辅助编程。</p>
 
-        <img class="codex-hero-img" src="../assets/codex-hero.png" alt="Codex desktop app" />
+        <img class="codex-hero-img" src="../assets/codex-hero.png" data-img-zh="../assets/codex-hero.png" data-img-en="../assets/codex-hero-en.png" alt="Codex desktop app" />
 
         <div class="guide-steps">
 
@@ -353,9 +353,9 @@ requires_openai_auth = true
 
             <h4 data-i18n="tools.step2FileB">登录并输入 API Key</h4>
             <p data-i18n="tools.step2AuthDesc">配置好 config.toml 后，打开 Codex 桌面应用。在登录界面点击「使用其他方式登录」：</p>
-            <img class="codex-hero-img" src="../assets/codex-other-login.png" alt="Codex login - choose other method" style="max-width:480px" />
+            <img class="codex-hero-img" src="../assets/codex-other-login.png" data-img-zh="../assets/codex-other-login.png" data-img-en="../assets/codex-other-login-en.png" alt="Codex login - choose other method" style="max-width:480px" />
             <p data-i18n="tools.step2AuthKey">然后在 API 密钥输入框中填入你的 API Key，点击「继续」即可完成连接：</p>
-            <img class="codex-hero-img" src="../assets/codex-login.png" alt="Codex login - enter API Key" style="max-width:480px" />
+            <img class="codex-hero-img" src="../assets/codex-login.png" data-img-zh="../assets/codex-login.png" data-img-en="../assets/codex-login-en.png" alt="Codex login - enter API Key" style="max-width:480px" />
           </div>
 
           <div class="guide-step">
@@ -508,6 +508,10 @@ requires_openai_auth = true
         document.querySelectorAll("[data-i18n]").forEach((element) => {
           const key = element.dataset.i18n;
           if (ui[currentLanguage][key]) element.textContent = ui[currentLanguage][key];
+        });
+
+        document.querySelectorAll("[data-img-zh][data-img-en]").forEach((image) => {
+          image.src = image.dataset[currentLanguage === "zh" ? "imgZh" : "imgEn"];
         });
 
         languageButtons.forEach((button) => {

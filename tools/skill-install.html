@@ -233,7 +233,7 @@
             <span class="guide-step-number">2</span>
             <h3 data-i18n="skills.step2Title">在 Codex 中安装 Skill</h3>
             <p data-i18n="skills.step2Desc">打开 Codex，将下载的 Skill zip 包直接发送到对话中，然后告诉 Codex「安装一下这个 skill」。Codex 会自动完成解压和安装。</p>
-            <img class="codex-hero-img" src="../assets/codex-install-skill.png" alt="Install skill in Codex" />
+            <img class="codex-hero-img" src="../assets/codex-install-skill.png" data-img-zh="../assets/codex-install-skill.png" data-img-en="../assets/codex-install-skill-en.png" alt="Install skill in Codex" />
             <p data-i18n="skills.step2Restart">安装完成后，重启 Codex 即可识别新 Skill。</p>
           </div>
 
@@ -358,6 +358,10 @@
         document.querySelectorAll("[data-i18n]").forEach((element) => {
           const key = element.dataset.i18n;
           if (ui[currentLanguage][key]) element.textContent = ui[currentLanguage][key];
+        });
+
+        document.querySelectorAll("[data-img-zh][data-img-en]").forEach((image) => {
+          image.src = image.dataset[currentLanguage === "zh" ? "imgZh" : "imgEn"];
         });
 
         languageButtons.forEach((button) => {

@@ -215,7 +215,7 @@
             </div>
 
             <p data-i18n="verify.step1Wait">Codex 会调用 Seedance 2.0 模型生成视频，整个过程大约需要 3-5 分钟。生成完成后会返回视频文件：</p>
-            <img class="codex-hero-img" src="../assets/codex-video-gen.png" alt="Codex video generation result" />
+            <img class="codex-hero-img" src="../assets/codex-video-gen.png" data-img-zh="../assets/codex-video-gen.png" data-img-en="../assets/codex-video-gen-en.png" alt="Codex video generation result" />
 
             <div class="success-box">
               <strong data-i18n="verify.step1Pass">通过标准：</strong>
@@ -357,6 +357,10 @@
         document.querySelectorAll("[data-i18n]").forEach((element) => {
           const key = element.dataset.i18n;
           if (ui[currentLanguage][key]) element.textContent = ui[currentLanguage][key];
+        });
+
+        document.querySelectorAll("[data-img-zh][data-img-en]").forEach((image) => {
+          image.src = image.dataset[currentLanguage === "zh" ? "imgZh" : "imgEn"];
         });
 
         languageButtons.forEach((button) => {
