@@ -5,6 +5,8 @@ let currentLanguage = "zh";
 
 const translations = {
   zh: {
+    "brand.name": "Manta AI",
+    "brand.tagline": "Future Design Lab 官网",
     "nav.tracks": "赛道",
     "nav.corpus": "语料库",
     "nav.workshop": "工作坊",
@@ -149,6 +151,12 @@ const translations = {
     "skills.downloadZip": "下载完整 ZIP",
     "skills.openGithub": "打开 Skills 文件夹",
     "skills.installLabel": "Codex 安装命令",
+    "skills.queryLabel": "安装后测试 Query",
+    "skills.query1": "帮我为“北京中小学生 AI 教育”寻找未来信号。",
+    "skills.query2": "把这个未来信号做 STEEP 分析。",
+    "skills.query3": "根据这个方案生成明日头条和 Backcasting 路线图。",
+    "skills.query4": "我的方案完成了，请推荐后期呈现形式并建立本地项目档案。",
+    "skills.query5": "检查我的最终提交是否完整。",
     "outputs.eyebrow": "产出要求",
     "outputs.title": "AI 共创工作坊产出要求",
     "outputs.proto": "由未来信号和地方挑战组合形成，用于界定机会与冲突。",
@@ -157,6 +165,8 @@ const translations = {
     "outputs.backcasting": "以市长、商业领导者、个体行动者等角色倒推行动路径。",
   },
   en: {
+    "brand.name": "Manta AI",
+    "brand.tagline": "Future Design Lab",
     "nav.tracks": "Tracks",
     "nav.corpus": "Corpus",
     "nav.workshop": "Workshop",
@@ -301,6 +311,12 @@ const translations = {
     "skills.downloadZip": "Download ZIP",
     "skills.openGithub": "Open Skills Folder",
     "skills.installLabel": "Codex install command",
+    "skills.queryLabel": "Post-install test queries",
+    "skills.query1": "Help me find future signals for AI education for primary and secondary students in Beijing.",
+    "skills.query2": "Run a STEEP analysis on this future signal.",
+    "skills.query3": "Generate a Tomorrow Headline and a Backcasting roadmap for this concept.",
+    "skills.query4": "My proposal is complete. Recommend final presentation formats and create a local project archive.",
+    "skills.query5": "Check whether my final submission package is complete.",
     "outputs.eyebrow": "Outputs",
     "outputs.title": "AI co-creation workshop outputs",
     "outputs.proto": "A combination of future signals and local challenges used to define opportunities and tensions.",
@@ -317,8 +333,18 @@ function applyLanguage(lang) {
   document.documentElement.lang = current === "zh" ? "zh-CN" : "en";
   document.title =
     current === "zh"
-      ? "国际太空艺术设计共创营"
-      : "International Space Art & Design Collaborative Camp";
+      ? "Manta AI | 国际太空艺术设计共创营"
+      : "Manta AI | International Space Art & Design Collaborative Camp";
+
+  const description = document.querySelector('meta[name="description"]');
+  if (description) {
+    description.setAttribute(
+      "content",
+      current === "zh"
+        ? "Manta AI 官网：国际太空艺术设计共创营、未来设计材料与 AI 共创工作流。"
+        : "Manta AI official site for the International Space Art & Design Collaborative Camp, future design materials, and AI co-creation workflow.",
+    );
+  }
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;

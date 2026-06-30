@@ -1,6 +1,6 @@
 ---
 name: future-design-project-controller
-description: Orchestrate the full Future Design student project workflow from method exploration through production skills, local asset archiving, and final delivery check.
+description: Orchestrate the full Future Design student project workflow from method exploration through production skills, local asset archiving, and final delivery check; 用于完整项目总控、调用顺序、后期制作和交付检查。
 ---
 
 # Future Design Project Controller

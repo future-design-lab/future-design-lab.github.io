@@ -1,6 +1,6 @@
 ---
 name: project-delivery-checker
-description: Check whether a Future Design student project has complete logic, rich presentation assets, organized local files, and a clear final submission package.
+description: Check whether a Future Design student project has complete logic, rich presentation assets, organized local files, and a clear final submission package; 用于最终交付检查、课程提交检查和缺口检查。
 ---
 
 # Project Delivery Checker

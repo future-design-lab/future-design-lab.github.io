@@ -1,6 +1,6 @@
 ---
 name: future-signal-scout
-description: Help users collect, compare, and select future signals for Future Design / Design Foresight projects before STEEP analysis.
+description: Help users collect, compare, and select future signals / weak signals for Future Design projects before STEEP analysis; 用于寻找未来信号、弱信号、趋势案例和课程资料。
 ---
 
 # Future Signal Scout

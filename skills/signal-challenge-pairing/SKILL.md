@@ -1,6 +1,6 @@
 ---
 name: signal-challenge-pairing
-description: Pair a selected future signal with a local challenge and form a design hypothesis for Future Design projects.
+description: Pair a selected future signal with a local challenge and form a design hypothesis; 用于信号-挑战配对、设计假设和方向收敛。
 ---
 
 # Signal-Challenge Pairing

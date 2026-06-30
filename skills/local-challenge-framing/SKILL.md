@@ -1,6 +1,6 @@
 ---
 name: local-challenge-framing
-description: Convert STEEP tensions into a grounded local challenge with affected people, place, pain points, and constraints.
+description: Convert STEEP tensions into a grounded local challenge with affected people, place, pain points, and constraints; 用于定义本地挑战、地方问题、受影响人群和痛点。
 ---
 
 # Local Challenge Framing

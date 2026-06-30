@@ -1,6 +1,6 @@
 ---
 name: tomorrow-headline-builder
-description: Create a Tomorrow Headline text and visual brief for Future Design concepts, making the preferred future tangible and debatable.
+description: Create a Tomorrow Headline text and future media visual brief for Future Design concepts; 用于明日头条、未来新闻、未来媒体叙事和视觉简报。
 ---
 
 # Tomorrow Headline Builder

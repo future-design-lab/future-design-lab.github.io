@@ -1,6 +1,6 @@
 ---
 name: future-interpretation-builder
-description: Write the core future interpretation that explains what is changing, why it matters, and what design opportunity emerges.
+description: Write the core future interpretation that explains what is changing, why it matters, and what design opportunity emerges; 用于未来解释、洞察句和设计机会。
 ---
 
 # Future Interpretation Builder

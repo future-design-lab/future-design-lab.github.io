@@ -1,6 +1,6 @@
 ---
 name: future-design-thinking-workshop
-description: Guide users through a Future Design Thinking / Design Foresight workshop with AI co-creation. Use when the user wants to design future-oriented concepts, run or facilitate a future design workshop, transform weak signals and local challenges into proposals, create Future Signals, STEEP analysis, Interpretation, Provotyping Cards, Tomorrow Headlines, or Backcasting roadmaps, or when the user asks for a reusable design methodology skill based on Future Design Thinking Workshop outputs.
+description: Guide users through a complete Future Design Thinking / Design Foresight workshop with AI co-creation; 用于未来设计工作坊、未来信号、STEEP、本地挑战、明日头条、Backcasting 和最终方案。
 ---
 
 # Future Design Thinking Workshop

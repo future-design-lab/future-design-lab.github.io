@@ -812,6 +812,39 @@ dd {
   background: rgba(182, 77, 47, 0.1);
 }
 
+.query-test {
+  border-top: 1px solid var(--line);
+  margin-top: 18px;
+  padding-top: 18px;
+}
+
+.query-test span {
+  color: var(--accent);
+  display: block;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.query-test ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.query-test li {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(246, 244, 238, 0.72);
+  color: var(--code);
+  line-height: 1.55;
+  list-style: none;
+  padding: 10px 12px;
+}
+
 @media (max-width: 980px) {
   .header-actions {
     flex-shrink: 0;

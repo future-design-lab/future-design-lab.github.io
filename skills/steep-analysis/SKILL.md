@@ -1,6 +1,6 @@
 ---
 name: steep-analysis
-description: Analyze a selected future signal through Social, Technological, Economic, Environmental, and Political lenses for Future Design projects.
+description: Analyze a selected future signal through Social, Technological, Economic, Environmental, and Political lenses; 用于 STEEP 分析、社会技术经济环境政策分析。
 ---
 
 # STEEP Analysis

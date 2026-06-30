@@ -1,6 +1,6 @@
 ---
 name: project-asset-archive
-description: Create and maintain a structured local project archive for Future Design student projects, including method outputs, generated assets, prompts, and final deliverables.
+description: Create and maintain a structured local project archive for Future Design student projects, including method outputs, generated assets, prompts, and final deliverables; 用于本地项目归档、资产索引、提示词记录和交付文件夹。
 ---
 
 # Project Asset Archive

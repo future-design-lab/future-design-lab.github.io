@@ -1,6 +1,6 @@
 ---
 name: provotyping-card-builder
-description: Create a Provotyping Card for a future concept, including users, mechanism, value, risks, and what should be tested.
+description: Create a Provotyping Card for a future concept, including users, mechanism, value, risks, and what should be tested; 用于挑衅式原型卡、概念卡和风险伦理。
 ---
 
 # Provotyping Card Builder

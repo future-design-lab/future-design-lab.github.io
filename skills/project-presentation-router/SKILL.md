@@ -1,6 +1,6 @@
 ---
 name: project-presentation-router
-description: Guide students from completed Future Design method outputs into appropriate final presentation formats and production skills.
+description: Guide students from completed Future Design method outputs into appropriate final presentation formats and production skills; 用于后期呈现路线、PPT、文档、效果图、原型和视频选择。
 ---
 
 # Project Presentation Router

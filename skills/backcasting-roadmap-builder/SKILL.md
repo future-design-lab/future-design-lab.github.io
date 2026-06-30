@@ -1,6 +1,6 @@
 ---
 name: backcasting-roadmap-builder
-description: Build a Backcasting roadmap from a preferred future concept back to present actions across public, business, and community roles.
+description: Build a Backcasting roadmap from a preferred future concept back to present actions across public, business, and community roles; 用于倒推路线图、2030/2040/2050 行动规划。
 ---
 
 # Backcasting Roadmap Builder
