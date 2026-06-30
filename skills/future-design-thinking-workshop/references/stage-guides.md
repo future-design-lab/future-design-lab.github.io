@@ -2,6 +2,17 @@
 
 Use this file as the detailed set of "small skills" inside the Future Design Thinking Workshop. Each stage has a job, required inputs, method, output, and completion check.
 
+## How to run each stage (read this first)
+
+For every stage below, follow the same discipline (full rules in `SKILL.md` → Conversation Pattern):
+
+1. **Retrieve before you generate.** Search the course knowledge base `https://future-design-lab.github.io/` (案例库 = `/cases/*` + `materials/extracted/case-*.md`; 语料库 = `/corpus/*` + `materials/extracted/corpus-*.md`). Each stage below names what to pull. Bring 1-3 entries in *with their codes/sources* as sparks.
+2. **Diverge first — ask, then wait.** Use the Facilitation prompts as open questions to the user. Pose them and **stop**; do not answer them yourself or pre-fill the artifact. The user's thinking is required input.
+3. **Co-write, don't hand over.** Draft the artifact as a proposal for critique, then let the user confirm or revise.
+4. **Gate before advancing.** Do not move to the next stage until ALL of: (a) every **Required canvas fields** entry below is filled with real content in `future-design-canvas-state.json`; (b) the **Completion check** genuinely passes; (c) the user has confirmed "this is complete, move on." If any fails, name the thin field and ask the targeted question — do not silently advance `current`.
+
+Required canvas fields map 1:1 to the cards in `future-design-canvas.html`. The canvas state keys per stage are: `brief, signals, steep, challenge, pairing, interpretation, provotyping, headline, backcasting, proposal`.
+
 ## Table of Contents
 
 1. Workshop Brief Framing
@@ -35,14 +46,19 @@ Facilitation prompts:
 
 Output: Workshop Brief.
 
-Completion check:
-- The topic, target context, primary users, and time horizon are explicit.
+Required canvas fields (`brief`): `topic`, `context`, `users`, `horizon`, `question` — all filled.
+
+Completion check (gate):
+- The topic, target context, primary users, and time horizon are explicit and specific (not "education" but "AI education for K-12 students in first-tier Chinese cities").
+- The framing `question` names a real tension worth a future inquiry.
 
 ## 2. Future Signals
 
 Purpose: Find weak signals, emerging trends, technologies, product cases, social shifts, policy shifts, or cultural changes that suggest possible futures.
 
 Read first: Workshop Brief.
+
+Retrieve before generating: pull 2-4 concrete signals from the **corpus library (语料库)** — `https://future-design-lab.github.io/corpus/*` or `materials/extracted/corpus-1..4.md` (entries like `IE-01 MOXIE 电解制氧`). Present them with their codes/sources as real observed signals, then ask the user which resonate or collide with their topic.
 
 Method:
 - Collect 5-10 signals. If browsing or current research is needed, use up-to-date sources; otherwise ask the user to supply known signals or generate plausible hypotheses and label them as hypotheses.
@@ -58,8 +74,11 @@ Facilitation prompts:
 
 Output: Future Signals List and Selected Signal.
 
-Completion check:
+Required canvas fields (`signals`): `selected`, `trend`, `risk` — all filled.
+
+Completion check (gate):
 - At least one selected signal is concrete enough to describe as an observed case, not only an abstract trend.
+- The `risk`/tension is named, not just the upside.
 
 ## 3. STEEP Analysis
 
@@ -82,14 +101,18 @@ Facilitation prompts:
 
 Output: STEEP Analysis.
 
-Completion check:
-- Each STEEP dimension contains a future implication relevant to the workshop topic.
+Required canvas fields (`steep`): `social`, `tech`, `economic`, `environment`, `political` — all five filled with a future implication (not a definition).
+
+Completion check (gate):
+- Each STEEP dimension contains a future implication relevant to the workshop topic. An empty or one-word dimension fails the gate.
 
 ## 4. Local Challenge
 
 Purpose: Anchor the future inquiry in a real, situated issue.
 
 Read first: Workshop Brief and STEEP Analysis.
+
+Retrieve before generating: scan the **case library (案例库)** — `/cases/*` or `materials/extracted/case-1..4.md` — for projects facing an analogous lived friction, and ask the user whether the parallel sharpens or reframes their challenge.
 
 Method:
 - Define the challenge as a present-tense reality in a place, community, or industry.
@@ -105,8 +128,10 @@ Facilitation prompts:
 
 Output: Local Challenge Brief.
 
-Completion check:
-- The challenge is specific, observable, and linked to affected actors.
+Required canvas fields (`challenge`): `challenge`, `place`, `people`, `pain`, `limits` — all filled.
+
+Completion check (gate):
+- The challenge is specific, observable, and linked to named affected actors. A generic "people struggle with X" fails the gate.
 
 ## 5. Signal-Challenge Pairing
 
@@ -128,8 +153,10 @@ Facilitation prompts:
 
 Output: Signal-Challenge Pair and Future Hypothesis.
 
-Completion check:
-- The chosen hypothesis clearly links one signal to one local challenge through a causal logic.
+Required canvas fields (`pairing`): `signal`, `challenge`, `hypothesis`, `direction` — all filled.
+
+Completion check (gate):
+- The chosen hypothesis clearly links one signal to one local challenge through a causal logic ("if this signal grows, then this challenge transforms into…").
 
 ## 6. Interpretation
 
@@ -152,14 +179,18 @@ Magic-if prompts:
 
 Output: Interpretation.
 
-Completion check:
-- The interpretation can be understood as the bridge between research and concept.
+Required canvas fields (`interpretation`): `sentence`, `actors`, `system`, `value`, `opportunity` — all filled.
+
+Completion check (gate):
+- The interpretation can be understood as the bridge between research and concept, and names the actor, system change, value shift, and design opportunity.
 
 ## 7. Provotyping Card
 
 Purpose: Create a provocative future concept card that can be discussed, challenged, and improved.
 
 Read first: Interpretation, plus Future Signals and Local Challenge for grounding.
+
+Retrieve before generating: borrow design methods (设计手法: 具身化 / 仪式化 / 生成 / 迁移 / 通感 / 模拟…) and 未来影响 framings from matching **case library** entries, and ask the user which mechanism fits their concept.
 
 Method:
 - Name the concept.
@@ -176,8 +207,10 @@ Facilitation prompts:
 
 Output: Provotyping Card.
 
-Completion check:
-- The card explains concept, users, mechanism, value, and controversy.
+Required canvas fields (`provotyping`): `name`, `oneLine`, `users`, `mechanism`, `risks` — all filled.
+
+Completion check (gate):
+- The card explains concept, users, mechanism, value, and controversy. A card that is only an app name fails the gate.
 
 ## 8. Tomorrow Headline
 
@@ -202,7 +235,9 @@ Facilitation prompts:
 
 Output: Tomorrow Headline text + Tomorrow Headline image.
 
-Completion check:
+Required canvas fields (`headline`): `year`, `place`, `headline`, `subheadline`, `story`, `image` — all filled (`image` = path to the generated visual once produced).
+
+Completion check (gate):
 - The headline reads like a plausible future news story, not a marketing slogan.
 - The image makes the future scenario immediately visible and carries a news or launch feeling rather than reading as a generic illustration.
 
@@ -227,8 +262,10 @@ Facilitation prompts:
 
 Output: Backcasting Roadmap.
 
-Completion check:
-- The roadmap has 2050 goals, 2040 system-building measures, and 2030 starter actions across roles.
+Required canvas fields (`backcasting`): `goal2050`, `measures2040`, `measures2030`, `public`, `business`, `community` — all filled.
+
+Completion check (gate):
+- The roadmap has 2050 goals, 2040 system-building measures, and 2030 starter actions across all three role columns (public / business / community). A blank role column fails the gate.
 
 ## 10. Final Proposal Assembly
 
@@ -250,5 +287,7 @@ Facilitation prompts:
 
 Output: Final Future Design Proposal.
 
-Completion check:
-- The proposal can stand alone and includes both imagination and implementation logic.
+Required canvas fields (`proposal`): `title`, `summary`, `risks`, `experiments` — all filled.
+
+Completion check (gate):
+- The proposal can stand alone and includes both imagination and implementation logic, plus named risks and concrete next experiments.
