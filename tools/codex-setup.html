@@ -287,18 +287,24 @@
           <div class="guide-step">
             <span class="guide-step-number">2</span>
             <h3 data-i18n="tools.step2Title">配置 LLM API</h3>
-            <p data-i18n="tools.step2Desc">在终端中运行以下命令，一键写入 mantai LLM 配置：</p>
+            <p data-i18n="tools.step2Desc">在终端中运行以下命令，自动配置 mantai LLM 服务（已有配置不会被覆盖）：</p>
 
-            <div class="code-block" style="position:relative">mkdir -p ~/.codex && cat > ~/.codex/config.toml &lt;&lt; 'EOF'
-model_provider = "mantai"
-model = "gpt-5.5"
+            <div class="code-block">mkdir -p ~/.codex
+if grep -q '^model_provider' ~/.codex/config.toml 2>/dev/null; then
+  sed -i.bak 's/^model_provider.*/model_provider = "mantai"/' ~/.codex/config.toml
+else
+  echo 'model_provider = "mantai"' >> ~/.codex/config.toml
+fi
+if ! grep -q '\[model_providers.mantai\]' ~/.codex/config.toml 2>/dev/null; then
+  cat >> ~/.codex/config.toml &lt;&lt; 'EOF'
 
 [model_providers.mantai]
 name = "mantai"
 base_url = "https://llm.mantai.me/v1"
 wire_api = "responses"
 requires_openai_auth = true
-EOF</div>
+EOF
+fi</div>
 
             <h4 data-i18n="tools.step2FileB">登录并输入 API Key</h4>
             <p data-i18n="tools.step2AuthDesc">配置好 config.toml 后，打开 Codex 桌面应用。在登录界面点击「使用其他方式登录」：</p>
@@ -375,7 +381,7 @@ EOF</div>
           "tools.step1Download": "前往 OpenAI 官网下载",
           "tools.step1Install": "下载完成后按照系统提示完成安装。macOS 用户将 .dmg 中的 Codex 拖入 Applications 文件夹；Windows 用户运行安装程序即可。",
           "tools.step2Title": "配置 LLM API",
-          "tools.step2Desc": "在终端中运行以下命令，一键写入 mantai LLM 配置：",
+          "tools.step2Desc": "在终端中运行以下命令，自动配置 mantai LLM 服务（已有配置不会被覆盖）：",
           "tools.step2FileA": "配置文件 config.toml",
           "tools.step2PathHint": "打开配置文件：",
           "tools.step2ConfigDesc": "将以下内容写入 config.toml：",
@@ -424,7 +430,7 @@ EOF</div>
           "tools.step1Download": "Go to OpenAI website to download",
           "tools.step1Install": "After downloading, follow the system prompts to install. macOS users drag Codex from the .dmg to the Applications folder; Windows users run the installer.",
           "tools.step2Title": "Configure the LLM API",
-          "tools.step2Desc": "Run the following command in your terminal to write the mantai LLM config in one step:",
+          "tools.step2Desc": "Run the following command in your terminal to configure the mantai LLM service (existing config won't be overwritten):",
           "tools.step2FileA": "Configuration file: config.toml",
           "tools.step2PathHint": "Open the configuration file:",
           "tools.step2ConfigDesc": "Write the following content into config.toml:",
