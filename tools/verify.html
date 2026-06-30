@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>工具使用：环境验证</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .guide-steps {
+        display: grid;
+        gap: 28px;
+        margin-top: 8px;
+      }
+      .guide-step {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 247, 0.82);
+        padding: 28px;
+      }
+      .guide-step-number {
+        align-items: center;
+        background: var(--code);
+        border-radius: 999px;
+        color: var(--panel);
+        display: inline-flex;
+        font-weight: 900;
+        height: 34px;
+        justify-content: center;
+        margin-bottom: 18px;
+        width: 34px;
+      }
+      .guide-step h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+      .guide-step p {
+        color: var(--muted);
+        line-height: 1.75;
+        margin-bottom: 14px;
+      }
+      .guide-step p:last-child {
+        margin-bottom: 0;
+      }
+      .code-block {
+        background: var(--code);
+        border-radius: 6px;
+        color: #e2e8f0;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 14px 0;
+        overflow-x: auto;
+        padding: 18px 20px;
+        white-space: pre;
+      }
+      .check-item {
+        align-items: flex-start;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 32px 1fr;
+        margin: 14px 0;
+        padding: 20px;
+      }
+      .check-icon {
+        align-items: center;
+        background: var(--accent-2);
+        border-radius: 50%;
+        color: #fff;
+        display: flex;
+        font-size: 16px;
+        font-weight: 900;
+        height: 32px;
+        justify-content: center;
+        width: 32px;
+      }
+      .check-item h4 {
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+      .check-item p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.65;
+        margin-bottom: 0;
+      }
+      .codex-hero-img {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 22px 70px rgba(35, 28, 18, 0.12);
+        display: block;
+        margin: 18px 0;
+        max-width: 100%;
+      }
+      .chat-bubble {
+        background: rgba(16, 32, 36, 0.06);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        display: inline-block;
+        font-size: 15px;
+        margin: 10px 0;
+        padding: 10px 16px;
+      }
+      .chat-reply {
+        background: rgba(15, 118, 110, 0.08);
+        border: 1px solid rgba(15, 118, 110, 0.2);
+        border-radius: 16px;
+        color: var(--code);
+        display: inline-block;
+        font-size: 15px;
+        margin: 6px 0 10px;
+        padding: 10px 16px;
+      }
+      .success-box {
+        background: rgba(15, 118, 110, 0.06);
+        border-left: 4px solid var(--accent-2);
+        border-radius: 0 6px 6px 0;
+        color: var(--code);
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 16px 0;
+        padding: 14px 18px;
+      }
+      .success-box strong {
+        color: var(--accent-2);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html#overview"><span class="brand-mark"></span><span><strong>Future Design Lab</strong><small>Space Camp Docs</small></span></a>
+      <div class="language-switch" role="group" aria-label="Language switcher"><button type="button" class="active" data-lang-switch="zh">中文</button><button type="button" data-lang-switch="en">EN</button></div>
+    </header>
+    <aside class="sidebar" aria-label="Docs sidebar">
+      <div class="sidebar-title" data-i18n="sidebar.title">文档目录</div>
+      <a href="../index.html#overview" data-i18n="sidebar.overview">项目概览</a>
+      <a href="../index.html#mission" data-i18n="sidebar.mission">愿景与规模</a>
+      <a href="../index.html#tracks" data-i18n="sidebar.tracks">六大赛道</a>
+      <a href="../index.html#timeline" data-i18n="sidebar.timeline">项目节奏</a>
+      <div class="sidebar-group">
+        <a href="../index.html#corpus" data-i18n="sidebar.corpus">语料库</a>
+        <div class="sidebar-children">
+          <a href="../corpus/independent-from-earth.html" data-i18n="corpus1.short">独立于地球</a>
+          <a href="../corpus/alien-mind.html" data-i18n="corpus2.short">地外迷域</a>
+          <a href="../corpus/hidden-twins.html" data-i18n="corpus3.short">隐藏同款</a>
+          <a href="../corpus/space-ritual-objects.html" data-i18n="corpus4.short">新太空仪式感物件</a>
+        </div>
+      </div>
+      <div class="sidebar-group">
+        <a href="../index.html#cases" data-i18n="sidebar.cases">案例库</a>
+        <div class="sidebar-children">
+          <a href="../cases/embodied-interaction.html" data-i18n="case1.short">具身体验与交互设计</a>
+          <a href="../cases/cultural-ritual.html" data-i18n="case2.short">文化结构与仪式演化</a>
+          <a href="../cases/time-emotion.html" data-i18n="case3.short">时间重构与情感连接</a>
+          <a href="../cases/shared-space.html" data-i18n="case4.short">非地理性共享空间</a>
+        </div>
+      </div>
+      <a href="../index.html#workshop" data-i18n="sidebar.workshop">AI 共创流程</a>
+      <a href="../index.html#deliverables" data-i18n="sidebar.outputs">产出要求</a>
+      <div class="sidebar-group">
+        <a data-i18n="sidebar.tools">工具使用</a>
+        <div class="sidebar-children">
+          <a href="./codex-setup.html" data-i18n="tools.codex">Codex 配置</a>
+          <a href="./skill-install.html" data-i18n="tools.skills">Skill 安装</a>
+          <a class="active" href="./verify.html" data-i18n="tools.verify">环境验证</a>
+        </div>
+      </div>
+    </aside>
+    <main class="docs">
+      <section class="section">
+        <p class="eyebrow" data-i18n="verify.eyebrow">工具使用</p>
+        <h1 data-i18n="verify.pageTitle">环境验证</h1>
+        <p class="hero-subtitle" data-i18n="verify.pageSubtitle">VERIFY YOUR SETUP IS WORKING</p>
+        <p class="lede" data-i18n="verify.pageLede">完成 Codex 安装、API 配置和 Skill 安装后，通过以下测试确认环境已正确配置，可以正常使用。</p>
+
+        <div class="guide-steps">
+
+          <div class="guide-step">
+            <span class="guide-step-number">1</span>
+            <h3 data-i18n="verify.step1Title">验证视频生成 Skill</h3>
+            <p data-i18n="verify.step1Desc">在 Codex 中尝试生成一段视频，确认 generate-multimodal-media Skill 和 MANTA_API_KEY 配置正常：</p>
+
+            <div class="check-item">
+              <span class="check-icon">?</span>
+              <div>
+                <h4 data-i18n="verify.step1Send">发送生成请求</h4>
+                <p data-i18n="verify.step1SendDesc">在 Codex 对话框中输入视频生成指令，例如：</p>
+                <div class="chat-bubble" data-i18n="verify.step1Prompt">生成一个视频，关于，spacex的升空</div>
+              </div>
+            </div>
+
+            <p data-i18n="verify.step1Wait">Codex 会调用 Seedance 2.0 模型生成视频，整个过程大约需要 3-5 分钟。生成完成后会返回视频文件：</p>
+            <img class="codex-hero-img" src="../assets/codex-video-gen.png" alt="Codex video generation result" />
+
+            <div class="success-box">
+              <strong data-i18n="verify.step1Pass">通过标准：</strong>
+              <span data-i18n="verify.step1PassDesc">视频文件成功生成并可预览。如果提示缺少 MANTA_API_KEY，请按 Skill 安装页面的步骤配置环境变量。</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+    <script>
+      const languageButtons = [...document.querySelectorAll("[data-lang-switch]")];
+      let currentLanguage = "zh";
+
+      const ui = {
+        zh: {
+          "sidebar.title": "文档目录",
+          "sidebar.overview": "项目概览",
+          "sidebar.mission": "愿景与规模",
+          "sidebar.tracks": "六大赛道",
+          "sidebar.timeline": "项目节奏",
+          "sidebar.corpus": "语料库",
+          "sidebar.cases": "案例库",
+          "sidebar.workshop": "AI 共创流程",
+          "sidebar.outputs": "产出要求",
+          "sidebar.tools": "工具使用",
+          "corpus1.short": "独立于地球",
+          "corpus2.short": "地外迷域",
+          "corpus3.short": "隐藏同款",
+          "corpus4.short": "新太空仪式感物件",
+          "case1.short": "具身体验与交互设计",
+          "case2.short": "文化结构与仪式演化",
+          "case3.short": "时间重构与情感连接",
+          "case4.short": "非地理性共享空间",
+          "tools.codex": "Codex 配置",
+          "tools.skills": "Skill 安装",
+          "tools.verify": "环境验证",
+          "verify.eyebrow": "工具使用",
+          "verify.pageTitle": "环境验证",
+          "verify.pageSubtitle": "VERIFY YOUR SETUP IS WORKING",
+          "verify.pageLede": "完成 Codex 安装、API 配置和 Skill 安装后，通过以下测试确认环境已正确配置，可以正常使用。",
+          "verify.step1Title": "验证视频生成 Skill",
+          "verify.step1Desc": "在 Codex 中尝试生成一段视频，确认 generate-multimodal-media Skill 和 MANTA_API_KEY 配置正常：",
+          "verify.step1Send": "发送生成请求",
+          "verify.step1SendDesc": "在 Codex 对话框中输入视频生成指令，例如：",
+          "verify.step1Prompt": "生成一个视频，关于，spacex的升空",
+          "verify.step1Wait": "Codex 会调用 Seedance 2.0 模型生成视频，整个过程大约需要 3-5 分钟。生成完成后会返回视频文件：",
+          "verify.step1Pass": "通过标准：",
+          "verify.step1PassDesc": "视频文件成功生成并可预览。如果提示缺少 MANTA_API_KEY，请按 Skill 安装页面的步骤配置环境变量。",
+        },
+        en: {
+          "sidebar.title": "Documentation",
+          "sidebar.overview": "Overview",
+          "sidebar.mission": "Mission & Scale",
+          "sidebar.tracks": "Six Tracks",
+          "sidebar.timeline": "Program Rhythm",
+          "sidebar.corpus": "Corpus Library",
+          "sidebar.cases": "Case Library",
+          "sidebar.workshop": "AI Workshop Flow",
+          "sidebar.outputs": "Outputs",
+          "sidebar.tools": "Tools",
+          "corpus1.short": "Independent from Earth",
+          "corpus2.short": "Alien Mind",
+          "corpus3.short": "Hidden Twins",
+          "corpus4.short": "Space Ritual Objects",
+          "case1.short": "Embodied Experience & Interaction",
+          "case2.short": "Cultural Structure & Ritual",
+          "case3.short": "Time Reconstruction & Emotion",
+          "case4.short": "Non-geographic Shared Space",
+          "tools.codex": "Codex Setup",
+          "tools.skills": "Skill Install",
+          "tools.verify": "Verify Setup",
+          "verify.eyebrow": "Tools",
+          "verify.pageTitle": "Environment Verification",
+          "verify.pageSubtitle": "VERIFY YOUR SETUP IS WORKING",
+          "verify.pageLede": "After installing Codex, configuring the API, and installing Skills, run these tests to confirm everything is set up correctly.",
+          "verify.step1Title": "Verify Video Generation Skill",
+          "verify.step1Desc": "Try generating a video in Codex to confirm the generate-multimodal-media Skill and MANTA_API_KEY are configured correctly:",
+          "verify.step1Send": "Send a Generation Request",
+          "verify.step1SendDesc": "Type a video generation prompt in Codex, for example:",
+          "verify.step1Prompt": "Generate a video about a SpaceX rocket launch",
+          "verify.step1Wait": "Codex will use the Seedance 2.0 model to generate the video. The process takes about 3-5 minutes. Once complete, it returns the video file:",
+          "verify.step1Pass": "Pass criteria: ",
+          "verify.step1PassDesc": "The video file is generated and can be previewed. If it reports a missing MANTA_API_KEY, configure the environment variable as described on the Skill Install page.",
+        },
+      };
+
+      function applyLanguage(lang) {
+        currentLanguage = ui[lang] ? lang : "zh";
+        document.documentElement.lang = currentLanguage === "zh" ? "zh-CN" : "en";
+        document.title = currentLanguage === "zh" ? "工具使用：环境验证" : "Tools: Environment Verification";
+
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.dataset.i18n;
+          if (ui[currentLanguage][key]) element.textContent = ui[currentLanguage][key];
+        });
+
+        languageButtons.forEach((button) => {
+          const isActive = button.dataset.langSwitch === currentLanguage;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        localStorage.setItem("space-camp-language", currentLanguage);
+      }
+
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => applyLanguage(button.dataset.langSwitch));
+      });
+
+      applyLanguage(localStorage.getItem("space-camp-language") || "zh");
+    </script>
+  </body>
+</html>

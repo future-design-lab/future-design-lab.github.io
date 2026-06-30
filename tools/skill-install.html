@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>工具使用：Skill 安装指南</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .guide-steps {
+        display: grid;
+        gap: 28px;
+        margin-top: 8px;
+      }
+      .guide-step {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 247, 0.82);
+        padding: 28px;
+      }
+      .guide-step-number {
+        align-items: center;
+        background: var(--code);
+        border-radius: 999px;
+        color: var(--panel);
+        display: inline-flex;
+        font-weight: 900;
+        height: 34px;
+        justify-content: center;
+        margin-bottom: 18px;
+        width: 34px;
+      }
+      .guide-step h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+      .guide-step p {
+        color: var(--muted);
+        line-height: 1.75;
+        margin-bottom: 14px;
+      }
+      .guide-step p:last-child {
+        margin-bottom: 0;
+      }
+      .code-block {
+        background: var(--code);
+        border-radius: 6px;
+        color: #e2e8f0;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 14px 0;
+        overflow-x: auto;
+        padding: 18px 20px;
+        white-space: pre;
+      }
+      .code-block .comment {
+        color: #6b7f8e;
+      }
+      .code-block .string {
+        color: #7ec699;
+      }
+      .code-block .key {
+        color: #e2b96d;
+      }
+      .code-inline {
+        background: rgba(16, 32, 36, 0.08);
+        border-radius: 4px;
+        color: var(--code);
+        font-family: "Courier New", monospace;
+        font-size: 0.9em;
+        padding: 2px 6px;
+      }
+      .note-box {
+        background: rgba(182, 77, 47, 0.06);
+        border-left: 4px solid var(--accent);
+        border-radius: 0 6px 6px 0;
+        color: var(--code);
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 16px 0;
+        padding: 14px 18px;
+      }
+      .note-box strong {
+        color: var(--accent);
+      }
+      .skill-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin: 20px 0;
+      }
+      .skill-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+      }
+      .skill-card h4 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+      .skill-card p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.65;
+        margin-bottom: 14px;
+      }
+      .skill-card .skill-tag {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--accent);
+        display: inline-block;
+        font-family: "Courier New", monospace;
+        font-size: 12px;
+        font-weight: 900;
+        margin-bottom: 14px;
+        padding: 4px 10px;
+      }
+      .skill-card .download-btn {
+        align-self: flex-start;
+        background: var(--ink);
+        border-radius: 6px;
+        color: var(--panel);
+        font-size: 13px;
+        font-weight: 900;
+        margin-top: auto;
+        padding: 10px 14px;
+        text-decoration: none;
+      }
+      .skill-card .download-btn:hover {
+        background: var(--accent);
+      }
+      @media (max-width: 640px) {
+        .skill-cards { grid-template-columns: 1fr; }
+      }
+      .codex-hero-img {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 22px 70px rgba(35, 28, 18, 0.12);
+        display: block;
+        margin: 18px 0;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html#overview"><span class="brand-mark"></span><span><strong>Future Design Lab</strong><small>Space Camp Docs</small></span></a>
+      <div class="language-switch" role="group" aria-label="Language switcher"><button type="button" class="active" data-lang-switch="zh">中文</button><button type="button" data-lang-switch="en">EN</button></div>
+    </header>
+    <aside class="sidebar" aria-label="Docs sidebar">
+      <div class="sidebar-title" data-i18n="sidebar.title">文档目录</div>
+      <a href="../index.html#overview" data-i18n="sidebar.overview">项目概览</a>
+      <a href="../index.html#mission" data-i18n="sidebar.mission">愿景与规模</a>
+      <a href="../index.html#tracks" data-i18n="sidebar.tracks">六大赛道</a>
+      <a href="../index.html#timeline" data-i18n="sidebar.timeline">项目节奏</a>
+      <div class="sidebar-group">
+        <a href="../index.html#corpus" data-i18n="sidebar.corpus">语料库</a>
+        <div class="sidebar-children">
+          <a href="../corpus/independent-from-earth.html" data-i18n="corpus1.short">独立于地球</a>
+          <a href="../corpus/alien-mind.html" data-i18n="corpus2.short">地外迷域</a>
+          <a href="../corpus/hidden-twins.html" data-i18n="corpus3.short">隐藏同款</a>
+          <a href="../corpus/space-ritual-objects.html" data-i18n="corpus4.short">新太空仪式感物件</a>
+        </div>
+      </div>
+      <div class="sidebar-group">
+        <a href="../index.html#cases" data-i18n="sidebar.cases">案例库</a>
+        <div class="sidebar-children">
+          <a href="../cases/embodied-interaction.html" data-i18n="case1.short">具身体验与交互设计</a>
+          <a href="../cases/cultural-ritual.html" data-i18n="case2.short">文化结构与仪式演化</a>
+          <a href="../cases/time-emotion.html" data-i18n="case3.short">时间重构与情感连接</a>
+          <a href="../cases/shared-space.html" data-i18n="case4.short">非地理性共享空间</a>
+        </div>
+      </div>
+      <a href="../index.html#workshop" data-i18n="sidebar.workshop">AI 共创流程</a>
+      <a href="../index.html#deliverables" data-i18n="sidebar.outputs">产出要求</a>
+      <div class="sidebar-group">
+        <a data-i18n="sidebar.tools">工具使用</a>
+        <div class="sidebar-children">
+          <a href="./codex-setup.html" data-i18n="tools.codex">Codex CLI 配置</a>
+          <a class="active" href="./skill-install.html" data-i18n="tools.skills">Skill 安装</a>
+          <a href="./verify.html" data-i18n="tools.verify">环境验证</a>
+        </div>
+      </div>
+    </aside>
+    <main class="docs">
+      <section class="section">
+        <p class="eyebrow" data-i18n="skills.eyebrow">工具使用</p>
+        <h1 data-i18n="skills.pageTitle">Skill 安装指南</h1>
+        <p class="hero-subtitle" data-i18n="skills.pageSubtitle">INSTALL AGENT SKILLS FOR AI CO-CREATION</p>
+        <p class="lede" data-i18n="skills.pageLede">Skill 是 AI Agent 的可复用能力模块。安装后，Agent 可以在对话中自动调用对应能力完成设计工坊引导、图片生成、视频制作等任务。</p>
+
+        <div class="guide-steps">
+
+          <div class="guide-step">
+            <span class="guide-step-number">1</span>
+            <h3 data-i18n="skills.step1Title">下载 Skill 包</h3>
+            <p data-i18n="skills.step1Desc">根据需要下载以下 Skill 包，解压后将整个文件夹放入你的项目中即可被 Agent 识别。</p>
+
+            <div class="skill-cards">
+              <div class="skill-card">
+                <span class="skill-tag">WORKSHOP</span>
+                <h4 data-i18n="skills.skill1Name">Future Design Thinking Workshop</h4>
+                <p data-i18n="skills.skill1Desc">设计工坊 Skill。引导用户完成未来设计思维工作坊的完整流程：从未来信号发现、STEEP 分析、本地挑战定义，到 Interpretation 生成、Tomorrow Headline 和 Backcasting 路线图。</p>
+                <a class="download-btn" href="../assets/downloads/future-design-thinking-workshop.zip" download data-i18n="skills.download">下载 Skill 包</a>
+              </div>
+              <div class="skill-card">
+                <span class="skill-tag">MEDIA</span>
+                <h4 data-i18n="skills.skill2Name">Generate Multimodal Media</h4>
+                <p data-i18n="skills.skill2Desc">图片与视频生成 Skill。通过 mantai LLM API 调用 gpt-image-2 生成/编辑图片，调用 Seedance 2.0 生成文生视频、图生视频等多模态内容。</p>
+                <a class="download-btn" href="../assets/downloads/generate-multimodal-media.zip" download data-i18n="skills.download">下载 Skill 包</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <span class="guide-step-number">2</span>
+            <h3 data-i18n="skills.step2Title">在 Codex 中安装 Skill</h3>
+            <p data-i18n="skills.step2Desc">打开 Codex，将下载的 Skill zip 包直接发送到对话中，然后告诉 Codex「安装一下这个 skill」。Codex 会自动完成解压和安装。</p>
+            <img class="codex-hero-img" src="../assets/codex-install-skill.png" alt="Install skill in Codex" />
+            <p data-i18n="skills.step2Restart">安装完成后，重启 Codex 即可识别新 Skill。</p>
+          </div>
+
+
+        </div>
+      </section>
+    </main>
+    <script>
+      const languageButtons = [...document.querySelectorAll("[data-lang-switch]")];
+      let currentLanguage = "zh";
+
+      const ui = {
+        zh: {
+          "sidebar.title": "文档目录",
+          "sidebar.overview": "项目概览",
+          "sidebar.mission": "愿景与规模",
+          "sidebar.tracks": "六大赛道",
+          "sidebar.timeline": "项目节奏",
+          "sidebar.corpus": "语料库",
+          "sidebar.cases": "案例库",
+          "sidebar.workshop": "AI 共创流程",
+          "sidebar.outputs": "产出要求",
+          "sidebar.tools": "工具使用",
+          "corpus1.short": "独立于地球",
+          "corpus2.short": "地外迷域",
+          "corpus3.short": "隐藏同款",
+          "corpus4.short": "新太空仪式感物件",
+          "case1.short": "具身体验与交互设计",
+          "case2.short": "文化结构与仪式演化",
+          "case3.short": "时间重构与情感连接",
+          "case4.short": "非地理性共享空间",
+          "tools.codex": "Codex CLI 配置",
+          "tools.skills": "Skill 安装",
+          "tools.verify": "环境验证",
+          "skills.eyebrow": "工具使用",
+          "skills.pageTitle": "Skill 安装指南",
+          "skills.pageSubtitle": "INSTALL AGENT SKILLS FOR AI CO-CREATION",
+          "skills.pageLede": "Skill 是 AI Agent 的可复用能力模块。安装后，Agent 可以在对话中自动调用对应能力完成设计工坊引导、图片生成、视频制作等任务。",
+          "skills.step1Title": "下载 Skill 包",
+          "skills.step1Desc": "根据需要下载以下 Skill 包，解压后将整个文件夹放入你的项目中即可被 Agent 识别。",
+          "skills.skill1Name": "Future Design Thinking Workshop",
+          "skills.skill1Desc": "设计工坊 Skill。引导用户完成未来设计思维工作坊的完整流程：从未来信号发现、STEEP 分析、本地挑战定义，到 Interpretation 生成、Tomorrow Headline 和 Backcasting 路线图。",
+          "skills.skill2Name": "Generate Multimodal Media",
+          "skills.skill2Desc": "图片与视频生成 Skill。通过 mantai LLM API 调用 gpt-image-2 生成/编辑图片，调用 Seedance 2.0 生成文生视频、图生视频等多模态内容。",
+          "skills.download": "下载 Skill 包",
+          "skills.step2Title": "在 Codex 中安装 Skill",
+          "skills.step2Desc": "打开 Codex，将下载的 Skill zip 包直接发送到对话中，然后告诉 Codex「安装一下这个 skill」。Codex 会自动完成解压和安装。",
+          "skills.step2Restart": "安装完成后，重启 Codex 即可识别新 Skill。",
+          "skills.step3Title": "配置 MANTA_API_KEY（图片/视频生成 Skill）",
+          "skills.step3Desc": "图片/视频生成 Skill 需要 mantai LLM API Key 才能工作。首次使用时 Agent 会询问你的 API Key，并自动将其存入环境变量，后续无需重复输入。",
+          "skills.step3Manual": "你也可以提前手动配置，避免 Agent 询问：",
+          "skills.step3MethodA": "方式一：Claude Code（推荐）",
+          "skills.step3MethodADesc": "将 API Key 配置到项目的 .claude/settings.json 中，每次启动 Claude Code 会自动加载：",
+          "skills.step3MethodB": "方式二：Shell 环境变量",
+          "skills.step3MethodBDesc": "将以下内容添加到你的 shell 配置文件（~/.zshrc 或 ~/.bashrc）：",
+          "skills.step3MethodBApply": "保存后执行 source 使其生效：",
+          "skills.noteLabel": "注意：",
+          "skills.noteContent": "配置好环境变量后，Agent 在需要生成图片或视频时会自动读取 MANTA_API_KEY，无需每次手动输入。设计工坊 Skill 不需要额外配置 API Key。",
+        },
+        en: {
+          "sidebar.title": "Documentation",
+          "sidebar.overview": "Overview",
+          "sidebar.mission": "Mission & Scale",
+          "sidebar.tracks": "Six Tracks",
+          "sidebar.timeline": "Program Rhythm",
+          "sidebar.corpus": "Corpus Library",
+          "sidebar.cases": "Case Library",
+          "sidebar.workshop": "AI Workshop Flow",
+          "sidebar.outputs": "Outputs",
+          "sidebar.tools": "Tools",
+          "corpus1.short": "Independent from Earth",
+          "corpus2.short": "Alien Mind",
+          "corpus3.short": "Hidden Twins",
+          "corpus4.short": "Space Ritual Objects",
+          "case1.short": "Embodied Experience & Interaction",
+          "case2.short": "Cultural Structure & Ritual",
+          "case3.short": "Time Reconstruction & Emotion",
+          "case4.short": "Non-geographic Shared Space",
+          "tools.codex": "Codex CLI Setup",
+          "tools.skills": "Skill Install",
+          "tools.verify": "Verify Setup",
+          "skills.eyebrow": "Tools",
+          "skills.pageTitle": "Skill Installation Guide",
+          "skills.pageSubtitle": "INSTALL AGENT SKILLS FOR AI CO-CREATION",
+          "skills.pageLede": "Skills are reusable capability modules for AI Agents. Once installed, the Agent can automatically invoke them during conversations to facilitate design workshops, generate images, produce videos, and more.",
+          "skills.step1Title": "Download Skill Packages",
+          "skills.step1Desc": "Download the Skill packages below. Extract and place the entire folder into your project to be recognized by the Agent.",
+          "skills.skill1Name": "Future Design Thinking Workshop",
+          "skills.skill1Desc": "Design workshop Skill. Guides users through the complete Future Design Thinking workflow: from future signal discovery, STEEP analysis, local challenge definition, to Interpretation, Tomorrow Headline, and Backcasting roadmap generation.",
+          "skills.skill2Name": "Generate Multimodal Media",
+          "skills.skill2Desc": "Image & video generation Skill. Uses gpt-image-2 for image generation/editing and Seedance 2.0 for text-to-video, image-to-video, and other multimodal content through the mantai LLM API.",
+          "skills.download": "Download Skill",
+          "skills.step2Title": "Install Skills in Codex",
+          "skills.step2Desc": "Open Codex, send the downloaded Skill zip file into the conversation, and tell Codex to \"install this skill\". Codex will automatically extract and install it.",
+          "skills.step2Restart": "After installation, restart Codex to recognize the new Skill.",
+          "skills.step3Title": "Configure MANTA_API_KEY (Media Generation Skill)",
+          "skills.step3Desc": "The media generation Skill requires a mantai LLM API Key. On first use, the Agent will ask for your API Key and automatically store it in the environment so you don't need to enter it again.",
+          "skills.step3Manual": "You can also configure it manually in advance:",
+          "skills.step3MethodA": "Method 1: Claude Code (Recommended)",
+          "skills.step3MethodADesc": "Add the API Key to your project's .claude/settings.json — Claude Code loads it automatically on every session:",
+          "skills.step3MethodB": "Method 2: Shell Environment Variable",
+          "skills.step3MethodBDesc": "Add the following to your shell config file (~/.zshrc or ~/.bashrc):",
+          "skills.step3MethodBApply": "Save and source it to take effect:",
+          "skills.noteLabel": "Note: ",
+          "skills.noteContent": "Once the environment variable is configured, the Agent will automatically read MANTA_API_KEY when generating images or videos — no manual input needed each time. The workshop Skill does not require an API Key.",
+        },
+      };
+
+      function applyLanguage(lang) {
+        currentLanguage = ui[lang] ? lang : "zh";
+        document.documentElement.lang = currentLanguage === "zh" ? "zh-CN" : "en";
+        document.title = currentLanguage === "zh"
+          ? "工具使用：Skill 安装指南"
+          : "Tools: Skill Installation Guide";
+
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.dataset.i18n;
+          if (ui[currentLanguage][key]) element.textContent = ui[currentLanguage][key];
+        });
+
+        languageButtons.forEach((button) => {
+          const isActive = button.dataset.langSwitch === currentLanguage;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        localStorage.setItem("space-camp-language", currentLanguage);
+      }
+
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => applyLanguage(button.dataset.langSwitch));
+      });
+
+      applyLanguage(localStorage.getItem("space-camp-language") || "zh");
+    </script>
+  </body>
+</html>

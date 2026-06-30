@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>工具使用：Codex 安装与配置</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .guide-steps {
+        display: grid;
+        gap: 28px;
+        margin-top: 8px;
+      }
+      .guide-step {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 247, 0.82);
+        padding: 28px;
+      }
+      .guide-step-number {
+        align-items: center;
+        background: var(--code);
+        border-radius: 999px;
+        color: var(--panel);
+        display: inline-flex;
+        font-weight: 900;
+        height: 34px;
+        justify-content: center;
+        margin-bottom: 18px;
+        width: 34px;
+      }
+      .guide-step h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+      .guide-step p {
+        color: var(--muted);
+        line-height: 1.75;
+        margin-bottom: 14px;
+      }
+      .guide-step p:last-child {
+        margin-bottom: 0;
+      }
+      .code-block {
+        background: var(--code);
+        border-radius: 6px;
+        color: #e2e8f0;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 14px 0;
+        overflow-x: auto;
+        padding: 18px 20px;
+        white-space: pre;
+      }
+      .code-block .comment {
+        color: #6b7f8e;
+      }
+      .code-block .string {
+        color: #7ec699;
+      }
+      .code-block .key {
+        color: #e2b96d;
+      }
+      .note-box {
+        background: rgba(182, 77, 47, 0.06);
+        border-left: 4px solid var(--accent);
+        border-radius: 0 6px 6px 0;
+        color: var(--code);
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 16px 0;
+        padding: 14px 18px;
+      }
+      .note-box strong {
+        color: var(--accent);
+      }
+      .platform-tabs {
+        display: flex;
+        gap: 2px;
+        margin: 12px 0 0;
+      }
+      .platform-tab {
+        appearance: none;
+        background: rgba(16, 32, 36, 0.06);
+        border: 1px solid var(--line);
+        border-bottom: 0;
+        border-radius: 6px 6px 0 0;
+        color: var(--muted);
+        cursor: pointer;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 8px 14px;
+      }
+      .platform-tab.active {
+        background: var(--code);
+        border-color: var(--code);
+        color: var(--panel);
+        cursor: default;
+      }
+      .platform-content {
+        display: none;
+      }
+      .platform-content.active {
+        display: block;
+      }
+      .platform-content .code-block:first-child {
+        border-radius: 0 6px 6px 6px;
+        margin-top: 0;
+      }
+      .ref-link {
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 253, 247, 0.82);
+        display: inline-flex;
+        font-weight: 800;
+        gap: 8px;
+        margin-top: 24px;
+        padding: 14px 18px;
+        transition: border-color 0.2s;
+      }
+      .ref-link:hover {
+        border-color: var(--accent);
+      }
+      .ref-link::after {
+        content: "\2192";
+      }
+      .codex-hero-img {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        display: block;
+        margin: 24px 0;
+        max-width: 100%;
+      }
+      .download-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 18px 0;
+      }
+      .download-buttons a {
+        border: 1px solid var(--ink);
+        border-radius: 6px;
+        background: var(--ink);
+        color: var(--panel);
+        display: inline-flex;
+        font-weight: 800;
+        padding: 12px 18px;
+        transition: background 0.2s;
+      }
+      .download-buttons a:hover {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+      .check-item {
+        align-items: flex-start;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 32px 1fr;
+        margin: 14px 0;
+        padding: 20px;
+      }
+      .check-icon {
+        align-items: center;
+        background: var(--accent-2);
+        border-radius: 50%;
+        color: #fff;
+        display: flex;
+        font-size: 16px;
+        font-weight: 900;
+        height: 32px;
+        justify-content: center;
+        width: 32px;
+      }
+      .check-item h4 {
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+      .check-item p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.65;
+        margin-bottom: 0;
+      }
+      .chat-bubble {
+        background: rgba(16, 32, 36, 0.06);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        display: inline-block;
+        font-size: 15px;
+        margin: 10px 0;
+        padding: 10px 16px;
+      }
+      .chat-reply {
+        background: rgba(15, 118, 110, 0.08);
+        border: 1px solid rgba(15, 118, 110, 0.2);
+        border-radius: 16px;
+        color: var(--code);
+        display: inline-block;
+        font-size: 15px;
+        margin: 6px 0 10px;
+        padding: 10px 16px;
+      }
+      .success-box {
+        background: rgba(15, 118, 110, 0.06);
+        border-left: 4px solid var(--accent-2);
+        border-radius: 0 6px 6px 0;
+        color: var(--code);
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 16px 0;
+        padding: 14px 18px;
+      }
+      .success-box strong {
+        color: var(--accent-2);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html#overview"><span class="brand-mark"></span><span><strong>Future Design Lab</strong><small>Space Camp Docs</small></span></a>
+      <div class="language-switch" role="group" aria-label="Language switcher"><button type="button" class="active" data-lang-switch="zh">中文</button><button type="button" data-lang-switch="en">EN</button></div>
+    </header>
+    <aside class="sidebar" aria-label="Docs sidebar">
+      <div class="sidebar-title" data-i18n="sidebar.title">文档目录</div>
+      <a href="../index.html#overview" data-i18n="sidebar.overview">项目概览</a>
+      <a href="../index.html#mission" data-i18n="sidebar.mission">愿景与规模</a>
+      <a href="../index.html#tracks" data-i18n="sidebar.tracks">六大赛道</a>
+      <a href="../index.html#timeline" data-i18n="sidebar.timeline">项目节奏</a>
+      <div class="sidebar-group">
+        <a href="../index.html#corpus" data-i18n="sidebar.corpus">语料库</a>
+        <div class="sidebar-children">
+          <a href="../corpus/independent-from-earth.html" data-i18n="corpus1.short">独立于地球</a>
+          <a href="../corpus/alien-mind.html" data-i18n="corpus2.short">地外迷域</a>
+          <a href="../corpus/hidden-twins.html" data-i18n="corpus3.short">隐藏同款</a>
+          <a href="../corpus/space-ritual-objects.html" data-i18n="corpus4.short">新太空仪式感物件</a>
+        </div>
+      </div>
+      <div class="sidebar-group">
+        <a href="../index.html#cases" data-i18n="sidebar.cases">案例库</a>
+        <div class="sidebar-children">
+          <a href="../cases/embodied-interaction.html" data-i18n="case1.short">具身体验与交互设计</a>
+          <a href="../cases/cultural-ritual.html" data-i18n="case2.short">文化结构与仪式演化</a>
+          <a href="../cases/time-emotion.html" data-i18n="case3.short">时间重构与情感连接</a>
+          <a href="../cases/shared-space.html" data-i18n="case4.short">非地理性共享空间</a>
+        </div>
+      </div>
+      <a href="../index.html#workshop" data-i18n="sidebar.workshop">AI 共创流程</a>
+      <a href="../index.html#deliverables" data-i18n="sidebar.outputs">产出要求</a>
+      <div class="sidebar-group">
+        <a data-i18n="sidebar.tools">工具使用</a>
+        <div class="sidebar-children">
+          <a class="active" href="./codex-setup.html" data-i18n="tools.codex">Codex 配置</a>
+          <a href="./skill-install.html" data-i18n="tools.skills">Skill 安装</a>
+          <a href="./verify.html" data-i18n="tools.verify">环境验证</a>
+        </div>
+      </div>
+    </aside>
+    <main class="docs">
+      <section class="section">
+        <p class="eyebrow" data-i18n="tools.eyebrow">工具使用</p>
+        <h1 data-i18n="tools.pageTitle">Codex 安装与配置</h1>
+        <p class="hero-subtitle" data-i18n="tools.pageSubtitle">INSTALL & CONFIGURE CODEX WITH MANTAI LLM</p>
+        <p class="lede" data-i18n="tools.pageLede">Codex 是 OpenAI 推出的桌面端 AI 编程智能体，由 ChatGPT 提供技术支持。通过以下步骤，你可以将其连接到 mantai LLM 服务，使用 AI 辅助编程。</p>
+
+        <img class="codex-hero-img" src="../assets/codex-hero.png" alt="Codex desktop app" />
+
+        <div class="guide-steps">
+
+          <div class="guide-step">
+            <span class="guide-step-number">1</span>
+            <h3 data-i18n="tools.step1Title">下载并安装 Codex</h3>
+            <p data-i18n="tools.step1Desc">从 OpenAI 官网下载 Codex 桌面客户端，支持 macOS 和 Windows：</p>
+            <div class="download-buttons">
+              <a href="https://openai.com/zh-Hans-CN/codex/" target="_blank" rel="noopener" data-i18n="tools.step1Download">前往 OpenAI 官网下载</a>
+            </div>
+            <p data-i18n="tools.step1Install">下载完成后按照系统提示完成安装。macOS 用户将 .dmg 中的 Codex 拖入 Applications 文件夹；Windows 用户运行安装程序即可。</p>
+          </div>
+
+          <div class="guide-step">
+            <span class="guide-step-number">2</span>
+            <h3 data-i18n="tools.step2Title">配置 LLM API</h3>
+            <p data-i18n="tools.step2Desc">需要创建两个配置文件，将 Codex 连接到 mantai LLM 服务。</p>
+
+            <h4 data-i18n="tools.step2FileA">配置文件 config.toml</h4>
+            <p data-i18n="tools.step2PathHint">打开配置文件：</p>
+            <div class="platform-tabs" data-tab-group="config-path">
+              <button type="button" class="platform-tab active" data-tab="mac">macOS / Linux</button>
+              <button type="button" class="platform-tab" data-tab="win">Windows</button>
+            </div>
+            <div class="platform-content active" data-tab-content="config-path" data-tab="mac">
+              <div class="code-block">~/.codex/config.toml</div>
+            </div>
+            <div class="platform-content" data-tab-content="config-path" data-tab="win">
+              <div class="code-block">C:\Users\你的用户名\.codex\config.toml</div>
+            </div>
+
+            <p data-i18n="tools.step2ConfigDesc">将以下内容写入 config.toml：</p>
+            <div class="code-block"><span class="key">model_provider</span> = <span class="string">"mantai"</span>
+<span class="key">model</span> = <span class="string">"gpt-5.5"</span>
+
+[<span class="key">model_providers.mantai</span>]
+<span class="key">name</span> = <span class="string">"mantai"</span>
+<span class="key">base_url</span> = <span class="string">"https://llm.mantai.me/v1"</span>
+<span class="key">wire_api</span> = <span class="string">"responses"</span>
+<span class="key">requires_openai_auth</span> = true</div>
+
+            <h4 data-i18n="tools.step2FileB">登录并输入 API Key</h4>
+            <p data-i18n="tools.step2AuthDesc">配置好 config.toml 后，打开 Codex 桌面应用。在登录界面点击「使用其他方式登录」：</p>
+            <img class="codex-hero-img" src="../assets/codex-other-login.png" alt="Codex login - choose other method" style="max-width:480px" />
+            <p data-i18n="tools.step2AuthKey">然后在 API 密钥输入框中填入你的 API Key，点击「继续」即可完成连接：</p>
+            <img class="codex-hero-img" src="../assets/codex-login.png" alt="Codex login - enter API Key" style="max-width:480px" />
+          </div>
+
+          <div class="guide-step">
+            <span class="guide-step-number">3</span>
+            <h3 data-i18n="tools.step3Title">验证连接</h3>
+            <p data-i18n="tools.step3Desc">登录成功后，在 Codex 中发送一条简单消息，确认 LLM 服务连接正常：</p>
+
+            <div class="check-item">
+              <span class="check-icon">?</span>
+              <div>
+                <h4 data-i18n="tools.step3Send">发送测试消息</h4>
+                <p data-i18n="tools.step3SendDesc">在 Codex 对话框中输入「你好」并发送。</p>
+                <div class="chat-bubble">你好</div>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon" style="background:var(--accent-2)">&#10003;</span>
+              <div>
+                <h4 data-i18n="tools.step3Expect">期望结果</h4>
+                <p data-i18n="tools.step3ExpectDesc">Codex 正常回复，说明 LLM API 连接成功。</p>
+                <div class="chat-reply" data-i18n="tools.step3Reply">你好！有什么我可以帮你的吗？</div>
+              </div>
+            </div>
+
+            <div class="success-box">
+              <strong data-i18n="tools.step3Pass">通过标准：</strong>
+              <span data-i18n="tools.step3PassDesc">收到 Codex 的正常回复，无报错信息。如果提示 API Key 无效或连接失败，请检查 config.toml 配置和 API Key 是否正确。</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+    <script>
+      const languageButtons = [...document.querySelectorAll("[data-lang-switch]")];
+      let currentLanguage = "zh";
+
+      const ui = {
+        zh: {
+          "sidebar.title": "文档目录",
+          "sidebar.overview": "项目概览",
+          "sidebar.mission": "愿景与规模",
+          "sidebar.tracks": "六大赛道",
+          "sidebar.timeline": "项目节奏",
+          "sidebar.corpus": "语料库",
+          "sidebar.cases": "案例库",
+          "sidebar.workshop": "AI 共创流程",
+          "sidebar.outputs": "产出要求",
+          "sidebar.tools": "工具使用",
+          "corpus1.short": "独立于地球",
+          "corpus2.short": "地外迷域",
+          "corpus3.short": "隐藏同款",
+          "corpus4.short": "新太空仪式感物件",
+          "case1.short": "具身体验与交互设计",
+          "case2.short": "文化结构与仪式演化",
+          "case3.short": "时间重构与情感连接",
+          "case4.short": "非地理性共享空间",
+          "tools.codex": "Codex 配置",
+          "tools.skills": "Skill 安装",
+          "tools.verify": "环境验证",
+          "tools.eyebrow": "工具使用",
+          "tools.pageTitle": "Codex 安装与配置",
+          "tools.pageSubtitle": "INSTALL & CONFIGURE CODEX WITH MANTAI LLM",
+          "tools.pageLede": "Codex 是 OpenAI 推出的桌面端 AI 编程智能体，由 ChatGPT 提供技术支持。通过以下步骤，你可以将其连接到 mantai LLM 服务，使用 AI 辅助编程。",
+          "tools.step1Title": "下载并安装 Codex",
+          "tools.step1Desc": "从 OpenAI 官网下载 Codex 桌面客户端，支持 macOS 和 Windows：",
+          "tools.step1Download": "前往 OpenAI 官网下载",
+          "tools.step1Install": "下载完成后按照系统提示完成安装。macOS 用户将 .dmg 中的 Codex 拖入 Applications 文件夹；Windows 用户运行安装程序即可。",
+          "tools.step2Title": "配置 LLM API",
+          "tools.step2Desc": "需要创建两个配置文件，将 Codex 连接到 mantai LLM 服务。",
+          "tools.step2FileA": "配置文件 config.toml",
+          "tools.step2PathHint": "打开配置文件：",
+          "tools.step2ConfigDesc": "将以下内容写入 config.toml：",
+          "tools.step2FileB": "登录并输入 API Key",
+          "tools.step2AuthDesc": "配置好 config.toml 后，打开 Codex 桌面应用。在登录界面点击「使用其他方式登录」：",
+          "tools.step2AuthKey": "然后在 API 密钥输入框中填入你的 API Key，点击「继续」即可完成连接：",
+          "tools.step3Title": "验证连接",
+          "tools.step3Desc": "登录成功后，在 Codex 中发送一条简单消息，确认 LLM 服务连接正常：",
+          "tools.step3Send": "发送测试消息",
+          "tools.step3SendDesc": "在 Codex 对话框中输入「你好」并发送。",
+          "tools.step3Expect": "期望结果",
+          "tools.step3ExpectDesc": "Codex 正常回复，说明 LLM API 连接成功。",
+          "tools.step3Reply": "你好！有什么我可以帮你的吗？",
+          "tools.step3Pass": "通过标准：",
+          "tools.step3PassDesc": "收到 Codex 的正常回复，无报错信息。如果提示 API Key 无效或连接失败，请检查 config.toml 配置和 API Key 是否正确。",
+        },
+        en: {
+          "sidebar.title": "Documentation",
+          "sidebar.overview": "Overview",
+          "sidebar.mission": "Mission & Scale",
+          "sidebar.tracks": "Six Tracks",
+          "sidebar.timeline": "Program Rhythm",
+          "sidebar.corpus": "Corpus Library",
+          "sidebar.cases": "Case Library",
+          "sidebar.workshop": "AI Workshop Flow",
+          "sidebar.outputs": "Outputs",
+          "sidebar.tools": "Tools",
+          "corpus1.short": "Independent from Earth",
+          "corpus2.short": "Alien Mind",
+          "corpus3.short": "Hidden Twins",
+          "corpus4.short": "Space Ritual Objects",
+          "case1.short": "Embodied Experience & Interaction",
+          "case2.short": "Cultural Structure & Ritual",
+          "case3.short": "Time Reconstruction & Emotion",
+          "case4.short": "Non-geographic Shared Space",
+          "tools.codex": "Codex Setup",
+          "tools.skills": "Skill Install",
+          "tools.verify": "Verify Setup",
+          "tools.eyebrow": "Tools",
+          "tools.pageTitle": "Codex Installation & Setup",
+          "tools.pageSubtitle": "INSTALL & CONFIGURE CODEX WITH MANTAI LLM",
+          "tools.pageLede": "Codex is OpenAI's desktop AI coding agent, powered by ChatGPT. Follow these steps to connect it to the mantai LLM service for AI-assisted programming.",
+          "tools.step1Title": "Download & Install Codex",
+          "tools.step1Desc": "Download the Codex desktop client from the OpenAI website, available for macOS and Windows:",
+          "tools.step1Download": "Go to OpenAI website to download",
+          "tools.step1Install": "After downloading, follow the system prompts to install. macOS users drag Codex from the .dmg to the Applications folder; Windows users run the installer.",
+          "tools.step2Title": "Configure the LLM API",
+          "tools.step2Desc": "Two configuration files are needed to connect Codex to the mantai LLM service.",
+          "tools.step2FileA": "Configuration file: config.toml",
+          "tools.step2PathHint": "Open the configuration file:",
+          "tools.step2ConfigDesc": "Write the following content into config.toml:",
+          "tools.step2FileB": "Login & Enter API Key",
+          "tools.step2AuthDesc": "After configuring config.toml, open the Codex desktop app. On the login screen, click \"Use other login method\":",
+          "tools.step2AuthKey": "Then enter your API Key in the input field and click \"Continue\" to complete the connection:",
+          "tools.step3Title": "Verify Connection",
+          "tools.step3Desc": "After logging in, send a simple message in Codex to confirm the LLM service connection is working:",
+          "tools.step3Send": "Send a Test Message",
+          "tools.step3SendDesc": "Type \"Hello\" in the Codex conversation and send it.",
+          "tools.step3Expect": "Expected Result",
+          "tools.step3ExpectDesc": "Codex replies normally, confirming the LLM API connection is successful.",
+          "tools.step3Reply": "Hello! How can I help you?",
+          "tools.step3Pass": "Pass criteria: ",
+          "tools.step3PassDesc": "You receive a normal reply from Codex with no error messages. If it reports an invalid API Key or connection failure, check your config.toml and API Key.",
+        },
+      };
+
+      function applyLanguage(lang) {
+        currentLanguage = ui[lang] ? lang : "zh";
+        document.documentElement.lang = currentLanguage === "zh" ? "zh-CN" : "en";
+        document.title = currentLanguage === "zh"
+          ? "工具使用：Codex 安装与配置"
+          : "Tools: Codex Installation & Setup";
+
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.dataset.i18n;
+          if (ui[currentLanguage][key]) element.textContent = ui[currentLanguage][key];
+        });
+
+        languageButtons.forEach((button) => {
+          const isActive = button.dataset.langSwitch === currentLanguage;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        localStorage.setItem("space-camp-language", currentLanguage);
+      }
+
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => applyLanguage(button.dataset.langSwitch));
+      });
+
+      applyLanguage(localStorage.getItem("space-camp-language") || "zh");
+
+      document.querySelectorAll(".platform-tabs").forEach((tabGroup) => {
+        const group = tabGroup.dataset.tabGroup;
+        tabGroup.querySelectorAll(".platform-tab").forEach((tab) => {
+          tab.addEventListener("click", () => {
+            const platform = tab.dataset.tab;
+            tabGroup.querySelectorAll(".platform-tab").forEach((t) => t.classList.toggle("active", t === tab));
+            document.querySelectorAll(`[data-tab-content="${group}"]`).forEach((content) => {
+              content.classList.toggle("active", content.dataset.tab === platform);
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

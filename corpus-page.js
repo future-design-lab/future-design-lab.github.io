@@ -30,6 +30,10 @@ const ui = {
     loading: "正在读取语料素材...",
     entryCount: "条信号",
     detail: "资料详情",
+    "sidebar.tools": "工具使用",
+    "tools.codex": "Codex CLI 配置",
+    "tools.skills": "Skill 安装",
+    "tools.verify": "环境验证",
   },
   en: {
     "sidebar.title": "Documentation",
@@ -52,6 +56,10 @@ const ui = {
     loading: "Loading corpus material...",
     entryCount: "signals",
     detail: "Corpus Detail",
+    "sidebar.tools": "Tools",
+    "tools.codex": "Codex CLI Setup",
+    "tools.skills": "Skill Install",
+    "tools.verify": "Verify Setup",
   },
 };
 
