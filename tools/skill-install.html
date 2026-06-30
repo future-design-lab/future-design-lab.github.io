@@ -107,6 +107,27 @@
         line-height: 1.65;
         margin-bottom: 14px;
       }
+      .skill-prompt-examples {
+        background: rgba(16, 32, 36, 0.04);
+        border-left: 3px solid var(--accent-2);
+        border-radius: 0 6px 6px 0;
+        color: var(--code);
+        display: grid;
+        gap: 8px;
+        font-size: 13px;
+        line-height: 1.6;
+        margin: 2px 0 16px;
+        padding: 12px 14px;
+      }
+      .skill-prompt-examples strong {
+        color: var(--accent-2);
+      }
+      .skill-prompt-examples code {
+        background: transparent;
+        color: var(--code);
+        font-family: "Courier New", monospace;
+        overflow-wrap: anywhere;
+      }
       .skill-card .skill-tag {
         border: 1px solid var(--line);
         border-radius: 999px;
@@ -224,6 +245,11 @@
                 <span class="skill-tag">MEDIA</span>
                 <h4 data-i18n="skills.skill2Name">Generate Multimodal Media</h4>
                 <p data-i18n="skills.skill2Desc">图片与视频生成 Skill。通过 mantai LLM API 调用 gpt-image-2 生成/编辑图片，调用 Seedance 2.0 生成文生视频、图生视频等多模态内容。</p>
+                <div class="skill-prompt-examples" aria-label="Generate Multimodal Media prompt examples">
+                  <strong data-i18n="skills.skill2PromptLabel">推荐触发句式：</strong>
+                  <code data-i18n="skills.skill2PromptImage">用generate-multimodal-media来生成一张xxxx图</code>
+                  <code data-i18n="skills.skill2PromptVideo">用generate-multimodal-media来生成一张xxxx视频</code>
+                </div>
                 <a class="download-btn" href="../assets/downloads/generate-multimodal-media.zip" download data-i18n="skills.download">下载 Skill 包</a>
               </div>
             </div>
@@ -281,6 +307,9 @@
           "skills.skill1Desc": "设计工坊 Skill。引导用户完成未来设计思维工作坊的完整流程：从未来信号发现、STEEP 分析、本地挑战定义，到 Interpretation 生成、Tomorrow Headline 和 Backcasting 路线图。",
           "skills.skill2Name": "Generate Multimodal Media",
           "skills.skill2Desc": "图片与视频生成 Skill。通过 mantai LLM API 调用 gpt-image-2 生成/编辑图片，调用 Seedance 2.0 生成文生视频、图生视频等多模态内容。",
+          "skills.skill2PromptLabel": "推荐触发句式：",
+          "skills.skill2PromptImage": "用generate-multimodal-media来生成一张xxxx图",
+          "skills.skill2PromptVideo": "用generate-multimodal-media来生成一张xxxx视频",
           "skills.download": "下载 Skill 包",
           "skills.step2Title": "在 Codex 中安装 Skill",
           "skills.step2Desc": "打开 Codex，将下载的 Skill zip 包直接发送到对话中，然后告诉 Codex「安装一下这个 skill」。Codex 会自动完成解压和安装。",
@@ -331,6 +360,9 @@
           "skills.skill1Desc": "Design workshop Skill. Guides users through the complete Future Design Thinking workflow: from future signal discovery, STEEP analysis, local challenge definition, to Interpretation, Tomorrow Headline, and Backcasting roadmap generation.",
           "skills.skill2Name": "Generate Multimodal Media",
           "skills.skill2Desc": "Image & video generation Skill. Uses gpt-image-2 for image generation/editing and Seedance 2.0 for text-to-video, image-to-video, and other multimodal content through the mantai LLM API.",
+          "skills.skill2PromptLabel": "Recommended trigger phrasing:",
+          "skills.skill2PromptImage": "Use generate-multimodal-media to generate an xxxx image",
+          "skills.skill2PromptVideo": "Use generate-multimodal-media to generate an xxxx video",
           "skills.download": "Download Skill",
           "skills.step2Title": "Install Skills in Codex",
           "skills.step2Desc": "Open Codex, send the downloaded Skill zip file into the conversation, and tell Codex to \"install this skill\". Codex will automatically extract and install it.",
