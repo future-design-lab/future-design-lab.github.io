@@ -53,7 +53,7 @@ Run these stages in order unless the user explicitly supplies a complete artifac
 5. Pair Signal + Challenge. Use `signal-challenge-pairing`.
 6. Write the Interpretation. Use `future-interpretation-builder`.
 7. Create the Provotyping Card. Use `provotyping-card-builder`.
-8. Write the Tomorrow Headline. Use `tomorrow-headline-builder`.
+8. Write the Tomorrow Headline. Use `tomorrow-headline-builder`. After agreeing the headline with the user, **generate the headline IMAGE** (newspaper front page / 微博热搜 / news hero / poster) with the `generate-multimodal-media` skill and write its path to `headline.image` — this stage produces an image, not just text.
 9. Build the Backcasting roadmap. Use `backcasting-roadmap-builder`.
 10. Assemble the final proposal.
 11. If course deliverables are needed, continue with `project-presentation-router`, `project-asset-archive`, production skills, and `project-delivery-checker`.

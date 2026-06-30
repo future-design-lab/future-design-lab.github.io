@@ -220,12 +220,14 @@ Read first: Provotyping Card and Interpretation.
 
 Method:
 - Pick a future year. Use 2030 for early implementation, 2040 for scaled systems, 2050 for transformed society.
-- Write a news title and short article.
-- Include place, actors, what changed, how it was achieved, and why it matters.
-- Add a quote or controversy if useful.
-- Optionally create separate headlines for 2030, 2040, and 2050.
-- Generate a visual Tomorrow Headline image rather than only text. The image may be a newspaper front page, news website hero, civic announcement poster, dramatic launch visual, or future media screenshot.
-- Save the image into the current project or live preview folder and write the path to `headline.image` in the canvas state.
+- Write a news title and short article. Include place, actors, what changed, how it was achieved, and why it matters. Add a quote or controversy if useful. Optionally create separate headlines for 2030, 2040, and 2050.
+- **The Tomorrow Headline is delivered as a generated IMAGE, not as text on the page.** The canvas `headline.image` field must hold a real image path — text alone does not satisfy this stage. The image should look like a newspaper front page, a 微博/social-media trending headline card, a news website hero, a civic announcement poster, a dramatic launch visual, or a future media screenshot — a believable piece of future news media, not a generic illustration.
+- **Generate the image with the `generate-multimodal-media` skill** (do not just describe it, and do not leave a text placeholder):
+  1. First discuss with the user and **agree on the headline image**: which medium (报纸头版 / 微博热搜 / 新闻网站 / 公告海报 / 发布会大屏), the future year, the headline text shown in the image, the visual tone, and the key scene. Confirm before generating.
+  2. Once confirmed, **call `generate-multimodal-media`** to produce the image (image model `gpt-image-2` via `POST /images/generations` at `https://llm.mantai.me/v1`; the skill handles `MANTA_API_KEY`). If that skill is not yet installed, install it from `assets/downloads/generate-multimodal-media.zip` first.
+  3. Build the image prompt from the agreed details: the medium/layout, the actual headline + subheadline text to render, place and year, the central future scene, and a news/launch mood. Aim for a wide news layout (e.g. `size` 1536x1024 or similar) so it reads as a front page / hero.
+  4. **Save the returned image** into the project / live-preview folder (next to `future-design-canvas.html`, e.g. `headline-2040.png`) and write that path to `headline.image` in `future-design-canvas-state.json` so the canvas renders it.
+  5. Show the result to the user and offer to regenerate or refine (different medium, tone, or headline wording) before locking the stage.
 
 Facilitation prompts:
 - What would a newspaper report if this concept succeeded?
@@ -239,6 +241,7 @@ Required canvas fields (`headline`): `year`, `place`, `headline`, `subheadline`,
 
 Completion check (gate):
 - The headline reads like a plausible future news story, not a marketing slogan.
+- `headline.image` points to a **real generated image file** (produced via `generate-multimodal-media`), saved next to the canvas and rendering on the page. A text-only headline with no image **fails** this gate.
 - The image makes the future scenario immediately visible and carries a news or launch feeling rather than reading as a generic illustration.
 
 ## 9. Backcasting
