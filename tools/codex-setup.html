@@ -346,12 +346,16 @@
             </div>
             <div class="platform-content active" data-tab-content="config-cmd" data-tab="mac">
               <div class="code-block">mkdir -p ~/.codex
+touch ~/.codex/config.toml
 if grep -q '^model_provider' ~/.codex/config.toml 2>/dev/null; then
   sed -i.bak 's/^model_provider.*/model_provider = "mantai"/' ~/.codex/config.toml
 else
-  sed -i.bak 's/^model /model_provider = "mantai"\nmodel /' ~/.codex/config.toml
+  tmp="$(mktemp)"
+  printf 'model_provider = "mantai"\n' &gt; "$tmp"
+  cat ~/.codex/config.toml &gt;&gt; "$tmp"
+  mv "$tmp" ~/.codex/config.toml
 fi
-if ! grep -q '\[model_providers.mantai\]' ~/.codex/config.toml 2>/dev/null; then
+if ! grep -q '^\[model_providers\.mantai\]' ~/.codex/config.toml 2>/dev/null; then
   cat >> ~/.codex/config.toml &lt;&lt; 'EOF'
 
 [model_providers.mantai]
@@ -368,16 +372,14 @@ $file = "$dir\config.toml"
 if (!(Test-Path $dir)) { New-Item -ItemType Directory -Path $dir | Out-Null }
 if (!(Test-Path $file)) { New-Item -ItemType File -Path $file | Out-Null }
 $c = Get-Content $file -Raw -ErrorAction SilentlyContinue
+$nl = [Environment]::NewLine
 if ($c -match '(?m)^model_provider') {
   $c = $c -replace '(?m)^model_provider.*', 'model_provider = "mantai"'
-  Set-Content $file $c -NoNewline
 } else {
-  $lines = Get-Content $file
-  $idx = ($lines | Select-String -Pattern '^model ').LineNumber - 1
-  $lines = $lines[0..($idx-1)] + 'model_provider = "mantai"' + $lines[$idx..($lines.Length-1)]
-  $lines | Set-Content $file
+  $c = 'model_provider = "mantai"' + $nl + $c
 }
-if ($c -notmatch '\[model_providers\.mantai\]') {
+Set-Content $file $c -NoNewline
+if ($c -notmatch '(?m)^\[model_providers\.mantai\]') {
   Add-Content $file @"
 
 [model_providers.mantai]
