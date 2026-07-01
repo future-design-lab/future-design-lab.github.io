@@ -75,6 +75,44 @@
       .note-box strong {
         color: var(--accent);
       }
+      .token-note {
+        align-items: center;
+        display: grid;
+        gap: 14px;
+        grid-template-columns: 1fr auto;
+      }
+      .token-note p {
+        margin: 0;
+      }
+      .token-link {
+        align-items: center;
+        background: var(--code);
+        border: 1px solid var(--code);
+        border-radius: 6px;
+        color: var(--panel);
+        display: inline-flex;
+        font-weight: 900;
+        gap: 8px;
+        justify-content: center;
+        padding: 10px 14px;
+        white-space: nowrap;
+      }
+      .token-link:hover {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+      .token-link::after {
+        content: "\2197";
+        font-size: 12px;
+      }
+      @media (max-width: 640px) {
+        .token-note {
+          grid-template-columns: 1fr;
+        }
+        .token-link {
+          width: 100%;
+        }
+      }
       .platform-tabs {
         display: flex;
         gap: 2px;
@@ -351,6 +389,14 @@ requires_openai_auth = true
 }</div>
             </div>
 
+            <div class="note-box token-note">
+              <p>
+                <strong data-i18n="tools.step2TokenTitle">获取 Token：</strong>
+                <span data-i18n="tools.step2TokenDesc">请先通过登记表提交邮箱，获取可用于登录 Codex 的 token。</span>
+              </p>
+              <a class="token-link" href="https://docs.qq.com/sheet/DYkxqaUNMWXBHRnJN" target="_blank" rel="noopener" data-i18n="tools.step2TokenLink">打开邮箱登记表</a>
+            </div>
+
             <h4 data-i18n="tools.step2FileB">登录并输入 API Key</h4>
             <p data-i18n="tools.step2AuthDesc">配置好 config.toml 后，打开 Codex 桌面应用。在登录界面点击「使用其他方式登录」：</p>
             <img class="codex-hero-img" src="../assets/codex-other-login.png" data-img-zh="../assets/codex-other-login.png" data-img-en="../assets/codex-other-login-en.png" alt="Codex login - choose other method" style="max-width:480px" />
@@ -432,6 +478,9 @@ requires_openai_auth = true
           "tools.step2FileA": "配置文件 config.toml",
           "tools.step2PathHint": "打开配置文件：",
           "tools.step2ConfigDesc": "将以下内容写入 config.toml：",
+          "tools.step2TokenTitle": "获取 Token：",
+          "tools.step2TokenDesc": "请先通过登记表提交邮箱，获取可用于登录 Codex 的 token。",
+          "tools.step2TokenLink": "打开邮箱登记表",
           "tools.step2FileB": "登录并输入 API Key",
           "tools.step2AuthDesc": "配置好 config.toml 后，打开 Codex 桌面应用。在登录界面点击「使用其他方式登录」：",
           "tools.step2AuthKey": "然后在 API 密钥输入框中填入你的 API Key，点击「继续」即可完成连接：",
@@ -483,6 +532,9 @@ requires_openai_auth = true
           "tools.step2FileA": "Configuration file: config.toml",
           "tools.step2PathHint": "Open the configuration file:",
           "tools.step2ConfigDesc": "Write the following content into config.toml:",
+          "tools.step2TokenTitle": "Get Token: ",
+          "tools.step2TokenDesc": "Register your email in the form first to receive the token used to log in to Codex.",
+          "tools.step2TokenLink": "Open email registration form",
           "tools.step2FileB": "Login & Enter API Key",
           "tools.step2AuthDesc": "After configuring config.toml, open the Codex desktop app. On the login screen, click \"Use other login method\":",
           "tools.step2AuthKey": "Then enter your API Key in the input field and click \"Continue\" to complete the connection:",
