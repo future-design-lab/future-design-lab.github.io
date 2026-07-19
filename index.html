@@ -7,37 +7,45 @@
     <meta name="description" content="Future Design Lab 未来设计实验室：国际太空艺术设计共创营 与 生成式人工智能助农设计人才培训 两个共创营项目导航。" />
     <style>
       :root{
-        --bg:#05070d;--bg2:#0a0f1c;--panel:#0e1524;--line:rgba(255,255,255,.09);
-        --txt:#eaf0ff;--dim:#93a0c0;--accent:#6ea8ff;--accent2:#7ef0c8;
+        --bg:#f6f4ee;--panel:#fffdf7;--ink:#181b1e;--muted:#676d71;
+        --line:#d8d1c3;--accent:#b64d2f;--accent-2:#0f766e;
+        --shadow:0 22px 70px rgba(35,28,18,.12);
+        font-family:"Avenir Next","PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",sans-serif;
       }
       *{box-sizing:border-box;margin:0;padding:0}
-      html,body{min-height:100%}
+      html{scroll-behavior:smooth}
       body{
-        font-family:"PingFang SC","Microsoft YaHei",-apple-system,"Segoe UI",system-ui,sans-serif;
-        color:var(--txt);background:
-          radial-gradient(1200px 700px at 20% -10%,rgba(110,168,255,.12),transparent 60%),
-          radial-gradient(900px 600px at 90% 10%,rgba(126,240,200,.10),transparent 55%),
-          linear-gradient(180deg,var(--bg),var(--bg2));
-        min-height:100vh;display:flex;flex-direction:column;
+        min-height:100vh;color:var(--ink);display:flex;flex-direction:column;
+        background:
+          linear-gradient(90deg,rgba(24,27,30,.035) 1px,transparent 1px),
+          linear-gradient(180deg,rgba(24,27,30,.035) 1px,transparent 1px),
+          var(--bg);
+        background-size:32px 32px;
       }
+      a{color:inherit;text-decoration:none}
       header{
         display:flex;align-items:center;justify-content:space-between;
-        padding:22px 6vw;border-bottom:1px solid var(--line);
+        height:64px;padding:0 6vw;border-bottom:1px solid var(--line);
+        background:rgba(246,244,238,.88);backdrop-filter:blur(18px);
+        position:sticky;top:0;z-index:20;
       }
-      .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--txt)}
+      .brand{display:inline-flex;align-items:center;gap:12px}
       .brand-mark{
-        width:34px;height:34px;border-radius:9px;
-        background:conic-gradient(from 140deg,#6ea8ff,#7ef0c8,#b98bff,#6ea8ff);
-        box-shadow:0 0 24px rgba(110,168,255,.5),inset 0 1px 0 rgba(255,255,255,.25);
+        width:28px;height:28px;border:2px solid var(--ink);border-radius:50%;
+        background:radial-gradient(circle at 70% 30%,var(--accent) 0 15%,transparent 16%),var(--panel);
+        box-shadow:inset 0 0 0 6px var(--panel);
       }
-      .brand strong{display:block;font-size:16px;letter-spacing:.02em}
-      .brand small{display:block;font-size:12px;color:var(--dim);margin-top:2px}
-      .powered{font-size:12px;color:var(--dim);text-decoration:none}
-      .powered strong{color:var(--txt)}
+      .brand strong{display:block;font-size:15px;line-height:1.1;letter-spacing:.01em}
+      .brand small{display:block;font-size:12px;color:var(--muted);margin-top:3px;line-height:1.1}
+      .powered{font-size:12px;color:var(--muted)}
+      .powered strong{color:var(--ink)}
       main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7vh 6vw 8vh}
-      .eyebrow{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-      h1{font-size:clamp(28px,4.4vw,52px);line-height:1.15;text-align:center;max-width:15ch;letter-spacing:.01em}
-      .lede{margin:20px auto 0;max-width:52ch;text-align:center;color:var(--dim);font-size:clamp(15px,1.4vw,18px);line-height:1.7}
+      .eyebrow{
+        font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+        color:var(--accent);margin-bottom:16px;font-weight:600;
+      }
+      h1{font-size:clamp(28px,4.4vw,46px);line-height:1.2;text-align:center;max-width:16ch;letter-spacing:.01em}
+      .lede{margin:20px auto 0;max-width:54ch;text-align:center;color:var(--muted);font-size:clamp(15px,1.3vw,17px);line-height:1.75}
       .cards{
         margin-top:52px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
         gap:26px;width:100%;max-width:960px;
@@ -45,24 +53,23 @@
       @media(max-width:760px){.cards{grid-template-columns:1fr}}
       .card{
         position:relative;display:flex;flex-direction:column;overflow:hidden;
-        border-radius:20px;border:1px solid var(--line);background:var(--panel);
-        text-decoration:none;color:var(--txt);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s;
-        box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+        border-radius:18px;border:1px solid var(--line);background:var(--panel);
+        box-shadow:var(--shadow);
+        transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s;
       }
-      .card:hover{transform:translateY(-6px);border-color:rgba(110,168,255,.5);box-shadow:0 24px 60px -28px rgba(110,168,255,.55)}
-      .card-media{aspect-ratio:16/9;overflow:hidden;position:relative}
-      .card-media img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) brightness(.92);transition:transform .5s}
+      .card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 30px 80px -30px rgba(182,77,47,.4)}
+      .card-media{aspect-ratio:16/10;overflow:hidden;position:relative}
+      .card-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
       .card:hover .card-media img{transform:scale(1.05)}
-      .card-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(14,21,36,.85))}
-      .card-body{padding:24px 26px 28px;position:relative}
-      .tag{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);margin-bottom:12px}
-      .card h2{font-size:22px;line-height:1.35}
-      .card p{margin-top:12px;color:var(--dim);font-size:14px;line-height:1.7}
+      .card-body{padding:24px 26px 28px}
+      .tag{display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-2);margin-bottom:12px;font-weight:600}
+      .card h2{font-size:21px;line-height:1.35}
+      .card p{margin-top:12px;color:var(--muted);font-size:14px;line-height:1.7}
       .card .go{margin-top:20px;display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--accent);font-weight:600}
       .card .go svg{transition:transform .3s}
       .card:hover .go svg{transform:translateX(5px)}
-      footer{padding:26px 6vw;border-top:1px solid var(--line);color:var(--dim);font-size:13px;text-align:center}
-      footer a{color:var(--dim)}
+      footer{padding:26px 6vw;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
+      footer a{color:var(--muted)}
     </style>
   </head>
   <body>
@@ -93,10 +100,10 @@
         </a>
 
         <a class="card" href="./agri/">
-          <div class="card-media"><img src="./agri/assets/hero/image2.png" alt="生成式人工智能助农设计人才培训" /></div>
+          <div class="card-media"><img src="./agri/assets/cover/agri-cover.jpg" alt="AI 助农设计人才培训" /></div>
           <div class="card-body">
             <span class="tag">National Art Fund 2026</span>
-            <h2>生成式人工智能助农设计人才培训</h2>
+            <h2>AI 助农设计人才培训</h2>
             <p>2026 年度国家艺术基金项目。以设计未来学视角，用生成式 AI 孵化乡村振兴与助农设计方案，面向全国青年创意设计人才共创。</p>
             <span class="go">进入项目
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
