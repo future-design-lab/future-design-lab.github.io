@@ -24,7 +24,7 @@ const translations = {
     "tools.skills": "Skill 安装",
     "tools.verify": "环境验证",
     "hero.eyebrow": "国家艺术基金 2026 · AI 助农共创营",
-    "hero.title": "AI 助农共创营",
+    "hero.title": "AI 助农·乡村振兴共创营",
     "hero.subtitle": "Generative AI for Rural Revitalization Design Talent Program",
     "hero.lede":
       "2026 年度国家艺术基金项目。从设计未来学视角出发，把生成式人工智能转化为可理解、可感知、可落地的乡村振兴与助农设计方案，面向全国遴选青年创意设计人才共创。",
@@ -196,7 +196,7 @@ const translations = {
     "tools.skills": "Skill Install",
     "tools.verify": "Verify Setup",
     "hero.eyebrow": "National Art Fund 2026 · AI for Rural Co-Creation",
-    "hero.title": "AI Rural Co-Creation Camp",
+    "hero.title": "AI Rural Revitalization Co-Creation Camp",
     "hero.subtitle": "National Agricultural Sci-Tech Innovation Port · 2026 National Arts Fund Program",
     "hero.lede":
       "A 2026 National Arts Fund program. From a Future Design Lab perspective, it turns generative AI into understandable, perceptible, and deployable design proposals for rural revitalization, co-created by selected young creative designers nationwide.",
@@ -357,8 +357,8 @@ function applyLanguage(lang) {
   document.documentElement.lang = current === "zh" ? "zh-CN" : "en";
   document.title =
     current === "zh"
-      ? "AI 助农共创营 · 国家艺术基金 2026"
-      : "AI Rural Co-Creation Camp · National Art Fund 2026";
+      ? "AI 助农·乡村振兴共创营 · 国家艺术基金 2026"
+      : "AI Rural Revitalization Co-Creation Camp · National Art Fund 2026";
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
