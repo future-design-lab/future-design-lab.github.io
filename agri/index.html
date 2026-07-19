@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>国家农业科技创新港·生成式人工智能助农设计人才培训</title>
+    <meta
+      name="description"
+      content="国家艺术基金 2026 项目·生成式人工智能助农设计人才培训文档站：六大方向、语料库与 AI 共创工作坊流程。"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260630-skills" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#overview" aria-label="Future Design Lab docs home">
+        <span class="brand-mark"></span>
+        <span>
+          <strong>Future Design Lab</strong>
+          <small>助农设计 Docs</small>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a class="powered-by" href="https://mantai.me/" target="_blank" rel="noopener"><span class="powered-mark"></span><span class="powered-text">Powered by <strong>Manta AI</strong></span></a>
+        <div class="language-switch" role="group" aria-label="Language switcher">
+          <button type="button" class="active" data-lang-switch="zh">中文</button>
+          <button type="button" data-lang-switch="en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar" aria-label="Docs sidebar">
+      <div class="sidebar-title" data-i18n="sidebar.title">Documentation</div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title" data-i18n="nav.overview">概览</div>
+        <a href="#overview" data-i18n="sidebar.intro">项目介绍</a>
+        <a href="#tracks" data-i18n="sidebar.tracksTime">赛道与节奏</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title" data-i18n="nav.materials">素材</div>
+        <div class="sidebar-group">
+          <a href="#corpus" data-i18n="sidebar.corpus">语料库</a>
+          <div class="sidebar-children">
+            <a href="./corpus/corpus-1.html" data-i18n="corpus1.short">独立于地球</a>
+            <a href="./corpus/corpus-2.html" data-i18n="corpus2.short">地外迷域</a>
+            <a href="./corpus/corpus-3.html" data-i18n="corpus3.short">隐藏同款</a>
+            <a href="./corpus/corpus-4.html" data-i18n="corpus4.short">乡村文化与可持续</a>
+          </div>
+        </div>
+        <div class="sidebar-group">
+          <a href="#cases" data-i18n="sidebar.cases">案例库</a>
+          <div class="sidebar-children">
+            <a href="./cases/case-1.html" data-i18n="case1.short">具身体验与交互设计</a>
+            <a href="./cases/case-2.html" data-i18n="case2.short">文化结构与仪式演化</a>
+            <a href="./cases/case-3.html" data-i18n="case3.short">时间重构与情感连接</a>
+            <a href="./cases/case-4.html" data-i18n="case4.short">非地理性共享空间</a>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title" data-i18n="nav.workshop">工作坊</div>
+        <a href="#workshop" data-i18n="sidebar.workshop">共创流程</a>
+        <a href="#skills" data-i18n="sidebar.skills">Skill 系统</a>
+        <a href="#deliverables" data-i18n="sidebar.outputs">产出要求</a>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title" data-i18n="nav.getStarted">开始使用</div>
+        <div class="sidebar-group">
+          <a href="#tools" data-i18n="sidebar.tools">工具使用</a>
+          <div class="sidebar-children">
+            <a href="./tools/codex-setup.html" data-i18n="tools.codex">Codex 配置</a>
+            <a href="./tools/skill-install.html" data-i18n="tools.skills">Skill 安装</a>
+            <a href="./tools/verify.html" data-i18n="tools.verify">环境验证</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="docs">
+      <section id="overview" class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">生成式AI助农设计人才培训</p>
+          <h1 data-i18n="hero.title">国家农业科技创新港·生成式人工智能助农设计人才培训</h1>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Generative AI for Rural Revitalization Design Talent Program</p>
+          <p class="lede" data-i18n="hero.lede">
+            2026 年度国家艺术基金项目。从设计未来学视角出发，把生成式人工智能转化为可理解、可感知、可落地的乡村振兴与助农设计方案，面向全国遴选青年创意设计人才共创。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#tracks" data-i18n="hero.ctaTracks">Explore Tracks</a>
+            <a class="button" href="#workshop" data-i18n="hero.ctaWorkshop">Workshop Flow</a>
+            <a class="button" href="#skills" data-i18n="hero.ctaSkills">Skill System</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Program snapshot">
+          <img src="./assets/hero/image1.png" alt="助农设计培训视觉" />
+          <div class="metric-grid">
+            <div><strong>6</strong><span data-i18n="metric.tracks">Tracks</span></div>
+            <div><strong>6</strong><span data-i18n="metric.tutors">Tutors</span></div>
+            <div><strong>1</strong><span data-i18n="metric.regions">Regions</span></div>
+            <div><strong>30</strong><span data-i18n="metric.institutions">Institutions</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mission" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="mission.eyebrow">Mission</p>
+          <h2 data-i18n="mission.title">以设计未来学回应生成式AI时代的乡村振兴</h2>
+        </div>
+        <div class="callout">
+          <p data-i18n="mission.callout">
+            本培训汇聚高校为主体、含行业一线的青年创意设计人才与 AI、设计、农业领域专家，通过跨学科协作，将生成式人工智能、乡村产业、地方文化与公众体验连接成一个可创作、可展示、可落地转化的助农设计实验场。围绕《设计未来学视角下的人工智能创作逻辑》展开教学。
+          </p>
+        </div>
+        <div class="info-grid">
+          <article>
+            <h3>Knowledge</h3>
+            <p data-i18n="mission.knowledge">AIGC、设计与农业跨界授课，建立共同知识底座。</p>
+          </article>
+          <article>
+            <h3>Co-creation</h3>
+            <p data-i18n="mission.cocreation">跨文化团队围绕六个方向推进概念、原型与展陈方案。</p>
+          </article>
+          <article>
+            <h3>Exhibition</h3>
+            <p data-i18n="mission.exhibition">优秀成果进入成果展示，形成乡村振兴设计的全景叙事。</p>
+          </article>
+          <article>
+            <h3>Validation</h3>
+            <p data-i18n="mission.validation">后续成果可继续孵化，并面向乡村产业与公众传播验证。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="tracks" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="tracks.eyebrow">Six Tracks</p>
+          <h2 data-i18n="tracks.title">六条路径共同回答生成式AI如何助农兴村</h2>
+        </div>
+        <div class="track-grid">
+          <article class="track-card">
+            <span>01</span>
+            <h3 data-i18n="track1.title">乡村愿景与未来叙事</h3>
+            <p>Rural Vision & Future Narratives</p>
+            <ul>
+              <li data-i18n="track1.desc">地方文化、产业叙事、科普传播与公众参与</li>
+              <li data-i18n="track1.output">交付：数字叙事作品、公众互动、传播载体</li>
+            </ul>
+          </article>
+          <article class="track-card">
+            <span>02</span>
+            <h3 data-i18n="track2.title">智慧农业与数字生产</h3>
+            <p>Smart Agriculture & Digital Production</p>
+            <ul>
+              <li data-i18n="track2.desc">AI 育种、遥感监测、无人农场、农业大模型与病虫害识别</li>
+              <li data-i18n="track2.output">交付：系统原型、智能装备方案、决策系统</li>
+            </ul>
+          </article>
+          <article class="track-card">
+            <span>03</span>
+            <h3 data-i18n="track3.title">农产品品牌与文创设计</h3>
+            <p>Agri-product Brand & Cultural-creative Design</p>
+            <ul>
+              <li data-i18n="track3.desc">AIGC 驱动的农产品品牌、包装、IP 与视觉体系</li>
+              <li data-i18n="track3.output">交付：品牌方案、包装/IP、来源与伦理记录</li>
+            </ul>
+          </article>
+          <article class="track-card">
+            <span>04</span>
+            <h3 data-i18n="track4.title">乡村生活与体验设计</h3>
+            <p>Rural Life & Experience Design</p>
+            <ul>
+              <li data-i18n="track4.desc">文旅、节庆、社区、服务与日常的乡村生活体验原型</li>
+              <li data-i18n="track4.output">交付：体验原型、设计档案、概念视频、展板</li>
+            </ul>
+          </article>
+          <article class="track-card">
+            <span>05</span>
+            <h3 data-i18n="track5.title">数字乡村与助农平台</h3>
+            <p>Digital Village & Rural Platforms</p>
+            <ul>
+              <li data-i18n="track5.desc">农村电商、直播助农、供应链溯源与智慧治理的智能表达</li>
+              <li data-i18n="track5.output">交付：实体原型、视觉方案、视频、展板</li>
+            </ul>
+          </article>
+          <article class="track-card">
+            <span>06</span>
+            <h3 data-i18n="track6.title">乡村文化与可持续设计</h3>
+            <p>Rural Culture & Sustainable Design</p>
+            <ul>
+              <li data-i18n="track6.desc">非遗活化、生态农业、碳中和与乡村公共空间的设计探索</li>
+              <li data-i18n="track6.output">交付：设计作品、可视化档案、视频、展板</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="timeline" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="timeline.eyebrow">Program Rhythm</p>
+          <h2 data-i18n="timeline.title">三阶段完成知识赋能、方案孵化与展览展示</h2>
+        </div>
+        <div class="timeline">
+          <article>
+            <time data-i18n="timeline.phase1">Phase 01</time>
+            <h3 data-i18n="timeline.phase1Title">专家讲座与知识赋能</h3>
+            <p data-i18n="timeline.phase1Desc">跨学科授课建立 AIGC、设计、农业与乡村振兴的共同语言。</p>
+          </article>
+          <article>
+            <time data-i18n="timeline.phase2">Phase 02</time>
+            <h3 data-i18n="timeline.phase2Title">创意探索与方案孵化</h3>
+            <p data-i18n="timeline.phase2Desc">学员深化概念、完成试验并形成可展示的助农设计原型。</p>
+          </article>
+          <article>
+            <time data-i18n="timeline.phase3">Phase 03</time>
+            <h3 data-i18n="timeline.phase3Title">评审遴选与展览展示</h3>
+            <p data-i18n="timeline.phase3Desc">通过路演、点评、遴选与成果转化推进农业设计成果落地。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="corpus" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="corpus.eyebrow">Corpus Library</p>
+          <h2 data-i18n="corpus.title">四组语料为概念生成提供助农设计信号</h2>
+        </div>
+        <div class="corpus-grid">
+          <article>
+            <h3 data-i18n="corpus1.title">语料包 1：智慧农业与生产技术</h3>
+            <p data-i18n="corpus1.desc">AI 育种、遥感监测、无人农场、农业大模型与病虫害识别等生产技术信号。</p>
+            <dl><dt>Signals</dt><dd data-i18n="corpus1.signals">AG-01 到 AG-30</dd><dt>Use</dt><dd data-i18n="corpus1.use">智慧生产、精准农业、农业智能</dd></dl>
+            <a class="text-button" href="./corpus/corpus-1.html" data-i18n="corpus.viewDetails">查看资料页</a>
+          </article>
+          <article>
+            <h3 data-i18n="corpus2.title">语料包 2：乡村品牌与文创</h3>
+            <p data-i18n="corpus2.desc">AIGC 生成式设计、农产品品牌包装、乡村 IP 孵化与短视频直播助农信号。</p>
+            <dl><dt>Signals</dt><dd data-i18n="corpus2.signals">CB-01 到 CB-20</dd><dt>Use</dt><dd data-i18n="corpus2.use">品牌文创、IP 孵化、内容营销</dd></dl>
+            <a class="text-button" href="./corpus/corpus-2.html" data-i18n="corpus.viewDetails">查看资料页</a>
+          </article>
+          <article>
+            <h3 data-i18n="corpus3.title">语料包 3：数字乡村与平台</h3>
+            <p data-i18n="corpus3.desc">农村电商、供应链溯源、数字普惠金融、智慧治理与乡村数据基础设施信号。</p>
+            <dl><dt>Signals</dt><dd data-i18n="corpus3.signals">DR-01 到 DR-20</dd><dt>Use</dt><dd data-i18n="corpus3.use">数字乡村、平台经济、智慧治理</dd></dl>
+            <a class="text-button" href="./corpus/corpus-3.html" data-i18n="corpus.viewDetails">查看资料页</a>
+          </article>
+          <article>
+            <h3 data-i18n="corpus4.title">语料包 4：乡村文化与可持续</h3>
+            <p data-i18n="corpus4.desc">非遗民艺数字化、乡村文旅体验、生态农业碳中和与公共空间设计信号。</p>
+            <dl><dt>Signals</dt><dd data-i18n="corpus4.signals">CH-01 到 CH-20</dd><dt>Use</dt><dd data-i18n="corpus4.use">文化活化、生态可持续、社区设计</dd></dl>
+            <a class="text-button" href="./corpus/corpus-4.html" data-i18n="corpus.viewDetails">查看资料页</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="cases" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="cases.eyebrow">Case Library</p>
+          <h2 data-i18n="cases.title">四组议题案例为设计推演提供参考原型</h2>
+        </div>
+        <div class="corpus-grid">
+          <article>
+            <h3 data-i18n="case1.title">案例库 1：智慧农业与 AI 生产</h3>
+            <p data-i18n="case1.desc">AI 育种、无人农场、农业大模型与智能识别等真实落地项目与企业实践。</p>
+            <dl><dt>Cases</dt><dd data-i18n="case1.signals">SA-01 到 SA-18</dd><dt>Use</dt><dd data-i18n="case1.use">智慧生产、精准农业、技术路径</dd></dl>
+            <a class="text-button" href="./cases/case-1.html" data-i18n="corpus.viewDetails">查看资料页</a>
+          </article>
+          <article>
+            <h3 data-i18n="case2.title">案例库 2：乡村品牌与 AIGC 文创</h3>
+            <p data-i18n="case2.desc">农产品品牌设计、乡村 IP、AIGC 包装海报与短视频营销的真实案例。</p>
+            <dl><dt>Cases</dt><dd data-i18n="case2.signals">BD-01 到 BD-18</dd><dt>Use</dt><dd data-i18n="case2.use">品牌设计、IP 孵化、内容营销</dd></dl>
+            <a class="text-button" href="./cases/case-2.html" data-i18n="corpus.viewDetails">查看资料页</a>
+          </article>
+          <article>
+            <h3 data-i18n="case3.title">案例库 3：数字乡村与平台</h3>
+            <p data-i18n="case3.desc">农村电商、数字治理、溯源与智慧文旅平台的真实落地项目。</p>
+            <dl><dt>Cases</dt><dd data-i18n="case3.signals">DV-01 到 DV-18</dd><dt>Use</dt><dd data-i18n="case3.use">数字乡村、平台经济、公共服务</dd></dl>
+            <a class="text-button" href="./cases/case-3.html" data-i18n="corpus.viewDetails">查看资料页</a>
+          </article>
+          <article>
+            <h3 data-i18n="case4.title">案例库 4：乡村文化与可持续设计</h3>
+            <p data-i18n="case4.desc">非遗活化、乡村公共空间、生态农业与社区设计的真实实践。</p>
+            <dl><dt>Cases</dt><dd data-i18n="case4.signals">CS-01 到 CS-18</dd><dt>Use</dt><dd data-i18n="case4.use">文化活化、可持续、社区营造</dd></dl>
+            <a class="text-button" href="./cases/case-4.html" data-i18n="corpus.viewDetails">查看资料页</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="workshop" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="workshop.eyebrow">AI Co-creation Workshop</p>
+          <h2 data-i18n="workshop.title">Future Design Thinking 工作流</h2>
+        </div>
+        <div class="workflow">
+          <article><strong>1</strong><span>Future Signals</span><p data-i18n="workshop.step1">浏览并选择未来信号。</p></article>
+          <article><strong>2</strong><span>Local Challenges</span><p data-i18n="workshop.step2">选择或输入地方挑战，AI 可辅助扩展。</p></article>
+          <article><strong>3</strong><span>Interpretation</span><p data-i18n="workshop.step3">生成 Provotyping Card 与 Interpretation 句式。</p></article>
+          <article><strong>4</strong><span>Tomorrow Headline</span><p data-i18n="workshop.step4">生成未来新闻标题和情境图像。</p></article>
+          <article><strong>5</strong><span>Backcasting</span><p data-i18n="workshop.step5">从 2050 目标倒推 2040 与 2030 行动。</p></article>
+        </div>
+        <div class="gallery">
+          <img src="./assets/workshop/workshop-page-001.png" alt="Workshop title slide" />
+          <img src="./assets/workshop/workshop-page-006.png" alt="Future Signals analysis model" />
+          <img src="./assets/workshop/workshop-page-008.png" alt="Tomorrow Headline analysis model" />
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="skills.eyebrow">Codex Skill System</p>
+          <h2 data-i18n="skills.title">从未来设计方法到完整方案呈现的 AI Skill 套件</h2>
+          <p class="section-lede" data-i18n="skills.lede">
+            这套 skill 把课程工作流拆成一个总控大 skill 和多个可独立调用的小 skill。学生可以从未来信号开始一步步完成方法产物，也可以在方案完成后继续生成项目文档、PPT、效果图、交互原型、故事板、视频和本地项目档案。
+          </p>
+        </div>
+
+        <div class="skill-overview">
+          <article class="skill-lead">
+            <span data-i18n="skills.controllerLabel">Controller</span>
+            <h3>future-design-thinking-workshop</h3>
+            <p data-i18n="skills.controllerDesc">
+              总控大 skill，负责串联完整 Future Design Thinking 流程：从主题界定、未来信号、STEEP、本地挑战、未来解释、Provotyping、明日头条、Backcasting，到最终方案和后期制作。
+            </p>
+          </article>
+          <article class="skill-lead">
+            <span data-i18n="skills.projectControllerLabel">Full Project</span>
+            <h3>future-design-project-controller</h3>
+            <p data-i18n="skills.projectControllerDesc">
+              项目级总控小 skill，负责把前期方法、后期呈现、资产归档和最终交付检查连成一个连续项目工作流。
+            </p>
+          </article>
+        </div>
+
+        <div class="skill-flow">
+          <article>
+            <strong>01</strong>
+            <h3 data-i18n="skills.phaseA">方法探索</h3>
+            <p data-i18n="skills.phaseADesc">完成未来信号、STEEP、本地挑战、信号挑战配对、未来解释和概念卡。</p>
+            <ul>
+              <li>future-signal-scout</li>
+              <li>steep-analysis</li>
+              <li>local-challenge-framing</li>
+              <li>signal-challenge-pairing</li>
+              <li>future-interpretation-builder</li>
+              <li>provotyping-card-builder</li>
+            </ul>
+          </article>
+          <article>
+            <strong>02</strong>
+            <h3 data-i18n="skills.phaseB">未来叙事与路线</h3>
+            <p data-i18n="skills.phaseBDesc">把概念转化成可感知的未来新闻和可执行的倒推路线。</p>
+            <ul>
+              <li>tomorrow-headline-builder</li>
+              <li>backcasting-roadmap-builder</li>
+            </ul>
+          </article>
+          <article>
+            <strong>03</strong>
+            <h3 data-i18n="skills.phaseC">后期呈现制作</h3>
+            <p data-i18n="skills.phaseCDesc">根据项目类型推荐合适呈现组合，并调用文档、PPT、图片、原型、视频等制作 skill。</p>
+            <ul>
+              <li>project-presentation-router</li>
+              <li>documents / Presentations / imagegen</li>
+              <li>playwright / Figma / xyq-nest-skill</li>
+            </ul>
+          </article>
+          <article>
+            <strong>04</strong>
+            <h3 data-i18n="skills.phaseD">本地归档与交付</h3>
+            <p data-i18n="skills.phaseDDesc">把设计方法产物、生成资产、提示词、源文件和最终交付物保存到学生本地项目文件夹。</p>
+            <ul>
+              <li>project-asset-archive</li>
+              <li>project-delivery-checker</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="skill-callout">
+          <div>
+            <p class="eyebrow" data-i18n="skills.archiveEyebrow">Local Archive</p>
+            <h3 data-i18n="skills.archiveTitle">每个学生都有一个结构化项目文件夹</h3>
+            <p data-i18n="skills.archiveDesc">
+              skill 会把项目整理为 00_project-brief、01_method-process、03_visual-assets、04_prototypes、05_documents、06_presentations、07_video-audio、08_delivery 和 09_ai-process-log，确保过程、资产和最终提交都能被追踪。
+            </p>
+          </div>
+          <code>future-design-projects/&lt;team-project&gt;/</code>
+        </div>
+
+        <div class="skill-downloads">
+          <div class="skill-download-head">
+            <div>
+              <p class="eyebrow" data-i18n="skills.downloadEyebrow">Download</p>
+              <h3 data-i18n="skills.downloadTitle">下载或安装这套 Skill</h3>
+              <p data-i18n="skills.downloadDesc">
+                推荐整套下载，保留总控 skill 与小 skill 的调用关系；也可以打开单个 skill 查看它的 SKILL.md。
+              </p>
+            </div>
+            <div class="download-actions">
+              <a class="button primary" href="https://github.com/future-design-lab/future-design-lab.github.io/archive/refs/heads/main.zip" data-i18n="skills.downloadZip">Download ZIP</a>
+              <a class="button" href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills" data-i18n="skills.openGithub">Open Skills Folder</a>
+            </div>
+          </div>
+          <div class="install-command">
+            <span data-i18n="skills.installLabel">Codex 安装命令</span>
+            <code>Use $skill-installer to install from repo future-design-lab/future-design-lab.github.io these paths: skills/future-design-thinking-workshop, skills/future-design-project-controller, skills/future-signal-scout, skills/steep-analysis, skills/local-challenge-framing, skills/signal-challenge-pairing, skills/future-interpretation-builder, skills/provotyping-card-builder, skills/tomorrow-headline-builder, skills/backcasting-roadmap-builder, skills/project-presentation-router, skills/project-asset-archive, skills/project-delivery-checker. Restart Codex after installation.</code>
+          </div>
+          <div class="skill-link-grid" aria-label="Skill download links">
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/future-design-thinking-workshop">future-design-thinking-workshop</a>
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/future-design-project-controller">future-design-project-controller</a>
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/future-signal-scout">future-signal-scout</a>
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/steep-analysis">steep-analysis</a>
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/local-challenge-framing">local-challenge-framing</a>
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/signal-challenge-pairing">signal-challenge-pairing</a>
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/future-interpretation-builder">future-interpretation-builder</a>
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/provotyping-card-builder">provotyping-card-builder</a>
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/tomorrow-headline-builder">tomorrow-headline-builder</a>
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/backcasting-roadmap-builder">backcasting-roadmap-builder</a>
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/project-presentation-router">project-presentation-router</a>
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/project-asset-archive">project-asset-archive</a>
+            <a href="https://github.com/future-design-lab/future-design-lab.github.io/tree/main/skills/project-delivery-checker">project-delivery-checker</a>
+          </div>
+          <div class="query-test">
+            <span data-i18n="skills.queryLabel">快速验证 Query</span>
+            <ul>
+              <li data-i18n="skills.query1">列出我当前已安装的 Future Design 相关 skills。</li>
+              <li data-i18n="skills.query2">用 future-design-project-controller 检查：如果主题是“县域农产品品牌与助农设计”，你会按什么顺序带我完成？只列阶段名，不要生成方案。</li>
+              <li data-i18n="skills.query3">用 future-signal-scout 为“县域农产品品牌与助农设计”列 3 个未来信号标题即可，不要展开分析。</li>
+              <li data-i18n="skills.query4">启动 Future Design Project Controller，模拟检查完整工作流是否可运行：列出每一步需要读取的上一步产物、会调用的 skill、会生成的产物名称。不要生成实际方案内容。</li>
+              <li data-i18n="skills.query5">说明：这些 query 只用于验证安装、触发和调用链；完整方案仍需要按工作坊步骤逐步完成。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="deliverables" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="outputs.eyebrow">Outputs</p>
+          <h2 data-i18n="outputs.title">AI 共创工作坊产出要求</h2>
+        </div>
+        <div class="output-list">
+          <article><h3>Prototyping Card</h3><p data-i18n="outputs.proto">由未来信号和地方挑战组合形成，用于界定机会与冲突。</p></article>
+          <article><h3>Interpretation</h3><p data-i18n="outputs.interpretation">用一句可讨论、可修改的未来解释串联 A、B、C 要素。</p></article>
+          <article><h3>Tomorrow Headline</h3><p data-i18n="outputs.headline">以 2030/2040/2050 的新闻标题呈现可感知未来。</p></article>
+          <article><h3>Backcasting Roles</h3><p data-i18n="outputs.backcasting">以县长、企业负责人、个体行动者等角色倒推行动路径。</p></article>
+        </div>
+      </section>
+
+      <section id="tools" class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="toolsSection.eyebrow">Tools</p>
+          <h2 data-i18n="toolsSection.title">工具使用</h2>
+        </div>
+
+        <div class="support-inner">
+          <div class="support-text">
+            <h3 data-i18n="support.title">遇到问题？扫码联系我们</h3>
+            <p data-i18n="support.desc">如果在使用过程中遇到技术问题、Token 充值、API 配置等，可以通过微信扫码联系 manta.ai 获取帮助。</p>
+          </div>
+          <div class="support-qr">
+            <img src="./assets/wechat-qr.png" alt="WeChat QR code — manta.ai" />
+            <span data-i18n="support.scan">微信扫码添加</span>
+          </div>
+        </div>
+
+        <div class="tool-links">
+          <a href="./tools/codex-setup.html" class="tool-link-card">
+            <h3 data-i18n="tools.codex">Codex 配置</h3>
+            <p data-i18n="toolsSection.codexDesc">安装 Codex CLI 并配置 mantai LLM API 服务。</p>
+          </a>
+          <a href="./tools/skill-install.html" class="tool-link-card">
+            <h3 data-i18n="tools.skills">Skill 安装</h3>
+            <p data-i18n="toolsSection.skillDesc">下载并安装设计工坊和多模态生成 Skill。</p>
+          </a>
+          <a href="./tools/verify.html" class="tool-link-card">
+            <h3 data-i18n="tools.verify">环境验证</h3>
+            <p data-i18n="toolsSection.verifyDesc">验证 Skill 和 API 配置是否正常工作。</p>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="./scripts.js?v=20260630-skills"></script>
+      <script src="./sidebar-scroll.js"></script>
+  </body>
+</html>
