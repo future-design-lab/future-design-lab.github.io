@@ -18,7 +18,7 @@ SA-01｜ElliQ 主动式 AI 陪伴机器人（Intuition Robotics）
 
 出处：https://elliq.com/
 
-SA-02｜Cutii 移动式社交陪伴机器人（France）
+SA-02｜Cutii 移动式社交陪伴机器人（法国）
 
 说明：Cutii 是法国面向老人的自主移动社交机器人，可在家中跟随移动、发起视频通话、推送文化娱乐活动，帮助老人维系社交与外部世界连接。
 
@@ -34,7 +34,7 @@ SA-02｜Cutii 移动式社交陪伴机器人（France）
 
 出处：https://www.cutii.io/
 
-SA-03｜PARO 情感陪护机器海豹（Japan）
+SA-03｜PARO 情感陪护机器海豹（日本）
 
 说明：PARO 是日本产业技术综合研究所研发的治疗性机器海豹，通过触觉、声音与动作回应抚摸，广泛用于失智症老人的情绪安抚与非药物干预，是情感陪护机器人的经典案例。
 
@@ -50,7 +50,7 @@ SA-03｜PARO 情感陪护机器海豹（Japan）
 
 出处：https://parorobots.com/
 
-SA-04｜Labrador Retriever 家用辅助机器人（USA）
+SA-04｜Labrador Retriever 家用辅助机器人（美国）
 
 说明：Labrador Systems 的 Retriever 是面向老人与行动不便者的自主搬运机器人，可在家中运送餐食、水杯与物品，减轻取放负担，支持独立居家生活。
 
