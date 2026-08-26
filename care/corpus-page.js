@@ -160,7 +160,7 @@ function renderEntryBody(lines) {
     .map((line) => {
       const colon = currentLanguage === "zh" ? "：" : ":";
       const highlighted = line.replace(
-        /^(说明|出处|信号标签|感知类别|关键词|产品类别|引用|启发|技术载体|未来影响|相关原理|设计对象|设计手法|标签|Description|Source|Signal Tags|Perception|Keywords|Category|Citation|Insight|Technology|Future Impact|Principle|Design Object|Design Method|Tags)\s*[:：]?\s*/,
+        /^(说明|出处|信号标签|感知类别|关键词|产品类别|引用|启发|技术载体|未来影响|相关原理|设计对象|设计手法|标签|场景|痛点|案例|过渡方案|机会点|能力矩阵|优先级|官网|代表能力|适用场景|Description|Source|Signal Tags|Perception|Keywords|Category|Citation|Insight|Technology|Future Impact|Principle|Design Object|Design Method|Tags|Scene|Pain Point|Case|Interim|Opportunity|Capabilities|Priority|Website)\s*[:：]?\s*/,
         `<strong>$1${colon}</strong> `,
       );
       return `<p>${highlighted}</p>`;
